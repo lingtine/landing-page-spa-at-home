@@ -1,0 +1,151 @@
+{
+  "header": {
+    "home": "Trang chủ",
+    "services": "Dịch vụ",
+    "faq": "FAQ",
+    "contact": "Liên hệ",
+    "chatZalo": "Chat Zalo"
+  },
+  "hero": {
+    "headline": "Massage tại nhà & khách sạn — đặt nhanh qua Zalo",
+    "subheadline": "Dịch vụ massage chuyên nghiệp, đến tận nơi với không gian riêng tư. Đặt lịch ngay chỉ với một tin nhắn Zalo.",
+    "ctaPrimary": "Đặt lịch qua Zalo",
+    "ctaSecondary": "Gọi ngay"
+  },
+  "services": {
+    "title": "Dịch vụ của chúng tôi",
+    "atHome": {
+      "name": "Massage tại nhà",
+      "description": "Thư giãn ngay tại không gian riêng của bạn với dịch vụ massage chuyên nghiệp",
+      "details": "Dịch vụ massage tại nhà mang đến trải nghiệm thư giãn tuyệt vời ngay tại không gian quen thuộc của bạn. Kỹ thuật viên sẽ đến tận nơi với đầy đủ dụng cụ chuyên nghiệp, giúp bạn tiết kiệm thời gian di chuyển và tận hưởng không gian riêng tư.",
+      "duration": "60-120 phút",
+      "features": ["Không gian riêng tư", "Tiết kiệm thời gian", "Dụng cụ đầy đủ", "KTV chuyên nghiệp"],
+      "image": "/images/massage-at-home.jpg",
+      "cta": "Đặt qua Zalo"
+    },
+    "atHotel": {
+      "name": "Massage tại khách sạn",
+      "description": "Phục vụ tại khách sạn, resort của bạn với tiêu chuẩn cao nhất",
+      "details": "Dịch vụ massage tại khách sạn dành cho khách du lịch và công tác. Chúng tôi phục vụ tại các khách sạn, resort với tiêu chuẩn 5 sao, giúp bạn thư giãn sau những chuyến đi dài hoặc ngày làm việc căng thẳng.",
+      "duration": "60-120 phút",
+      "features": ["Tiêu chuẩn cao", "Phục vụ 24/7", "Đặt lịch linh hoạt", "Chuyên nghiệp"],
+      "image": "/images/massage-at-hotel.jpg",
+      "cta": "Đặt qua Zalo"
+    },
+    "body": {
+      "name": "Massage Body",
+      "description": "Massage toàn thân giúp giảm căng thẳng, đau nhức cơ bắp",
+      "details": "Massage body toàn thân sử dụng các kỹ thuật chuyên sâu để giải tỏa căng thẳng, đau nhức cơ bắp và cải thiện tuần hoàn máu. Phù hợp cho những người làm việc văn phòng, vận động viên hoặc người thường xuyên bị đau lưng, cổ vai gáy.",
+      "duration": "90-120 phút",
+      "features": ["Giảm đau nhức", "Cải thiện tuần hoàn", "Thư giãn sâu", "Tăng cường năng lượng"],
+      "image": "/images/massage-body.jpg",
+      "cta": "Đặt qua Zalo"
+    },
+    "neck": {
+      "name": "Massage Cổ - Vai - Gáy",
+      "description": "Giảm đau nhức vùng cổ, vai, gáy do làm việc lâu",
+      "details": "Massage chuyên sâu vùng cổ, vai, gáy giúp giải tỏa căng thẳng và đau nhức do ngồi làm việc lâu, sử dụng máy tính nhiều. Kỹ thuật này tập trung vào các điểm đau, giúp cải thiện tư thế và giảm đau đầu do căng cơ.",
+      "duration": "60 phút",
+      "features": ["Giảm đau đầu", "Cải thiện tư thế", "Giảm căng cơ", "Tập trung vùng đau"],
+      "image": "/images/massage-neck.jpg",
+      "cta": "Đặt qua Zalo"
+    },
+    "foot": {
+      "name": "Massage Chân",
+      "description": "Thư giãn đôi chân mệt mỏi sau một ngày dài",
+      "details": "Massage chân giúp thư giãn đôi chân mệt mỏi, giảm phù nề và cải thiện tuần hoàn máu. Đặc biệt hiệu quả cho những người phải đứng hoặc đi lại nhiều trong ngày. Kỹ thuật massage chân còn giúp kích thích các huyệt đạo, mang lại cảm giác thư thái toàn thân.",
+      "duration": "60 phút",
+      "features": ["Giảm mệt mỏi", "Giảm phù nề", "Kích thích huyệt đạo", "Thư giãn toàn thân"],
+      "image": "/images/massage-foot.jpg",
+      "cta": "Đặt qua Zalo"
+    },
+    "hotStone": {
+      "name": "Massage Đá Nóng",
+      "description": "Liệu pháp đá nóng giúp thư giãn sâu và giảm đau nhức",
+      "details": "Massage đá nóng là liệu pháp spa cao cấp sử dụng đá núi lửa được làm nóng để massage cơ thể. Nhiệt độ từ đá giúp thư giãn cơ bắp sâu, giảm đau nhức, cải thiện tuần hoàn máu và mang lại cảm giác thư thái tuyệt vời. Phù hợp cho những người bị đau cơ mãn tính hoặc căng thẳng cao độ.",
+      "duration": "90 phút",
+      "features": ["Thư giãn sâu", "Giảm đau mãn tính", "Cải thiện tuần hoàn", "Liệu pháp cao cấp"],
+      "image": "/images/massage-hot-stone.jpg",
+      "cta": "Đặt qua Zalo"
+    }
+  },
+  "benefits": {
+    "title": "Tại sao chọn IDMassage?",
+    "professional": {
+      "title": "KTV chuyên nghiệp",
+      "description": "Đội ngũ kỹ thuật viên được đào tạo bài bản, giàu kinh nghiệm"
+    },
+    "punctual": {
+      "title": "Đến tận nơi đúng giờ",
+      "description": "Cam kết đến đúng giờ hẹn, không làm bạn phải chờ đợi"
+    },
+    "private": {
+      "title": "Không gian riêng tư",
+      "description": "Thư giãn trong không gian quen thuộc của chính bạn"
+    },
+    "clean": {
+      "title": "Dụng cụ sạch sẽ",
+      "description": "Tất cả dụng cụ được vệ sinh và khử trùng kỹ lưỡng"
+    },
+    "fast": {
+      "title": "Hỗ trợ đặt lịch nhanh",
+      "description": "Đặt lịch chỉ với một tin nhắn Zalo, phản hồi trong vài phút"
+    }
+  },
+  "steps": {
+    "title": "Quy trình đặt lịch",
+    "step1": {
+      "title": "Chọn dịch vụ",
+      "description": "Chọn dịch vụ massage phù hợp với nhu cầu của bạn"
+    },
+    "step2": {
+      "title": "Chat Zalo gửi thông tin",
+      "description": "Gửi địa điểm và thời gian mong muốn qua Zalo"
+    },
+    "step3": {
+      "title": "KTV đến & thực hiện",
+      "description": "Kỹ thuật viên sẽ đến đúng giờ và thực hiện dịch vụ"
+    }
+  },
+  "faq": {
+    "title": "Câu hỏi thường gặp",
+    "q1": {
+      "question": "Khu vực nào được phục vụ?",
+      "answer": "Chúng tôi phục vụ tại thành phố Huế và các khu vực lân cận. Vui lòng liên hệ để xác nhận khu vực cụ thể."
+    },
+    "q2": {
+      "question": "Thời gian phục vụ là khi nào?",
+      "answer": "Chúng tôi phục vụ từ 8:00 - 22:00 hàng ngày, bao gồm cả cuối tuần và ngày lễ."
+    },
+    "q3": {
+      "question": "Có thể đổi lịch hoặc hủy lịch không?",
+      "answer": "Có, bạn có thể đổi hoặc hủy lịch hẹn bằng cách liên hệ qua Zalo hoặc hotline trước ít nhất 2 giờ."
+    },
+    "q4": {
+      "question": "Có cần chuẩn bị gì trước khi đặt lịch?",
+      "answer": "Bạn chỉ cần chuẩn bị không gian sạch sẽ và thoải mái. Chúng tôi sẽ mang đầy đủ dụng cụ cần thiết."
+    },
+    "q5": {
+      "question": "Chính sách bảo mật như thế nào?",
+      "answer": "Chúng tôi cam kết bảo mật thông tin khách hàng và đảm bảo không gian riêng tư tuyệt đối trong quá trình phục vụ."
+    }
+  },
+  "footer": {
+    "company": "Công ty TNHH Thương Mại và Dịch vụ ID-Group",
+    "address": "04 Đống Đa, Phường Thuận Hoá, Thành phố Huế",
+    "phone": "0886 517 257",
+    "email": "info@idmassage.com",
+    "zalo": "Zalo",
+    "hotline": "Hotline",
+    "emailLabel": "Email",
+    "links": {
+      "about": "Về IDMassage",
+      "technicians": "Kỹ thuật viên",
+      "privacy": "Chính sách bảo mật",
+      "terms": "Điều khoản dịch vụ",
+      "rules": "Quy chế hoạt động"
+    },
+    "copyright": "© 2026. Công ty TNHH Thương Mại và Dịch vụ ID-Group",
+    "license": "GPDKKD: 3301735772 do sở Kế hoạch & Đầu tư TP.Huế cấp ngày 15/11/2024"
+  }
+}
