@@ -1,7 +1,10 @@
-// Zalo link utility
-export const ZALO_PHONE = '+84886517257';
-export const ZALO_LINK = `https://zalo.me/${ZALO_PHONE}`;
-export const HOTLINE_LINK = `tel:${ZALO_PHONE}`;
+// Zalo link utility – uses global config
+import config from '@/global-config';
+
+const raw = config.phoneNumber.replace(/\s/g, '').replace(/^0/, '84');
+export const ZALO_PHONE = raw.startsWith('84') ? `+${raw}` : `+84${raw}`;
+export const ZALO_LINK = config.zalo;
+export const HOTLINE_LINK = `tel:${config.phoneNumber.replace(/\s/g, '')}`;
 
 // Open Zalo with fallback
 export function openZalo(serviceName?: string, locale?: string) {
@@ -11,7 +14,7 @@ export function openZalo(serviceName?: string, locale?: string) {
     
     if (isMobile) {
       // Try Zalo deep link
-      const deepLink = `zalo://chat?phone=${ZALO_PHONE.replace('+', '')}`;
+      const deepLink = `zalo://chat?phone=${ZALO_PHONE.replace(/\D/g, '')}`;
       const iframe = document.createElement('iframe');
       iframe.style.display = 'none';
       iframe.src = deepLink;

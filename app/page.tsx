@@ -2,20 +2,21 @@
 
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import { locales, defaultLocale } from '@/lib/i18n';
 
 export default function RootPage() {
   const router = useRouter();
   
   useEffect(() => {
-    // Detect preferred language or default to 'vi'
-    const savedLocale = localStorage.getItem('locale') || 'vi';
-    router.replace(`/${savedLocale}`);
+    const saved = localStorage.getItem('locale');
+    const locale = saved && locales.includes(saved as 'vi' | 'en' | 'ko') ? saved : defaultLocale;
+    router.replace(`/${locale}`);
   }, [router]);
   
   return (
     <div className="min-h-screen flex items-center justify-center">
       <div className="text-center">
-        <p className="text-slate-600">Đang chuyển hướng...</p>
+        <p className="text-text-muted">Đang chuyển hướng...</p>
       </div>
     </div>
   );

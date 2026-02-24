@@ -6,6 +6,7 @@ import Benefits from '@/components/Benefits';
 import Steps from '@/components/Steps';
 import FAQ from '@/components/FAQ';
 import Footer from '@/components/Footer';
+import config from '@/global-config';
 import type { Metadata } from 'next';
 
 // Generate static params for all locales
@@ -23,25 +24,37 @@ export async function generateMetadata({
   const locale = params.locale as Locale;
   const translations = await getTranslations(locale);
   
-  const title = locale === 'vi' 
-    ? 'IDMassage - Dịch vụ Massage tại nhà và khách sạn'
-    : 'IDMassage - Home & Hotel Massage Service';
-    
-  const description = locale === 'vi'
-    ? 'Dịch vụ massage chuyên nghiệp tại nhà và khách sạn. Đặt lịch nhanh qua Zalo. KTV chuyên nghiệp, đến tận nơi đúng giờ.'
-    : 'Professional massage service at home and hotel. Book quickly via Zalo. Professional therapists, on-time service.';
-  
+  const titles: Record<Locale, string> = {
+    vi: `${config.nameWebsite} - Dịch vụ Massage tại nhà và khách sạn`,
+    en: `${config.nameWebsite} - Home & Hotel Massage Service`,
+    ko: `${config.nameWebsite} - 홈 & 호텔 마사지 서비스`,
+  };
+  const descriptions: Record<Locale, string> = {
+    vi: 'Dịch vụ massage chuyên nghiệp tại nhà và khách sạn. Đặt lịch nhanh qua Zalo. KTV chuyên nghiệp, đến tận nơi đúng giờ.',
+    en: 'Professional massage service at home and hotel. Book quickly via Zalo. Professional therapists, on-time service.',
+    ko: '홈·호텔 전문 마사지 서비스. 자로로 빠른 예약. 전문 테라피스트, 정시 방문.',
+  };
+  const keywords: Record<Locale, string> = {
+    vi: 'massage tại nhà, massage khách sạn, massage Huế, đặt lịch massage',
+    en: 'home massage, hotel massage, Hue massage, book massage',
+    ko: '홈 마사지, 호텔 마사지, 후에 마사지, 마사지 예약',
+  };
+  const ogLocales: Record<Locale, string> = {
+    vi: 'vi_VN',
+    en: 'en_US',
+    ko: 'ko_KR',
+  };
+  const title = titles[locale];
+  const description = descriptions[locale];
   return {
     title,
     description,
-    keywords: locale === 'vi' 
-      ? 'massage tại nhà, massage khách sạn, massage Huế, đặt lịch massage'
-      : 'home massage, hotel massage, Hue massage, book massage',
+    keywords: keywords[locale],
     openGraph: {
       title,
       description,
       type: 'website',
-      locale: locale === 'vi' ? 'vi_VN' : 'en_US',
+      locale: ogLocales[locale],
     },
   };
 }
@@ -73,23 +86,18 @@ export default async function HomePage({
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'LocalBusiness',
-            name: 'IDMassage',
+            name: config.nameWebsite,
             description: translations.hero.subheadline,
-            telephone: '+84886517257',
-            email: 'info@idmassage.com',
+            telephone: config.phoneNumber.startsWith('0') ? `+84${config.phoneNumber.slice(1)}` : config.phoneNumber,
+            email: config.email,
             address: {
               '@type': 'PostalAddress',
-              streetAddress: '04 Đống Đa',
-              addressLocality: 'Phường Thuận Hoá',
-              addressRegion: 'Thành phố Huế',
+              streetAddress: config.address,
               addressCountry: 'VN',
             },
-            url: 'https://idmassage.com',
+            url: undefined,
             priceRange: '$$',
-            areaServed: {
-              '@type': 'City',
-              name: 'Hue',
-            },
+            areaServed: { '@type': 'City', name: 'Hue' },
             serviceType: 'Massage Service',
           }),
         }}

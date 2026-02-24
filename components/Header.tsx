@@ -1,9 +1,16 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
-import { type Locale } from '@/lib/i18n';
+import { useState, useRef, useEffect } from 'react';
+import { type Locale, locales } from '@/lib/i18n';
 import { openZalo } from '@/lib/zalo';
+import config from '@/global-config';
+
+const localeOptions: Record<Locale, { code: string; flag: string; name: string }> = {
+  en: { code: 'EN', flag: '🇺🇸', name: 'English' },
+  vi: { code: 'VI', flag: '🇻🇳', name: 'Tiếng Việt' },
+  ko: { code: 'KO', flag: '🇰🇷', name: '한국어' },
+};
 
 interface HeaderProps {
   translations: any;
@@ -12,46 +19,64 @@ interface HeaderProps {
 
 export default function Header({ translations, currentLocale }: HeaderProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  
-  // Get alternate locale
-  const alternateLocale: Locale = currentLocale === 'vi' ? 'en' : 'vi';
-  const alternatePath = `/${alternateLocale}`;
-  
+  const [isLangOpen, setIsLangOpen] = useState(false);
+  const langDropdownRef = useRef<HTMLDivElement>(null);
+
   const closeMobileMenu = () => setIsMobileMenuOpen(false);
-  
+
+  /** Cuộn mượt tới section theo id; trên mobile đóng menu trước */
+  const scrollToSection = (id: string) => (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    closeMobileMenu();
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (langDropdownRef.current && !langDropdownRef.current.contains(e.target as Node)) {
+        setIsLangOpen(false);
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
   return (
     <>
-      <header className="bg-dark text-white shadow-sm sticky top-0 z-50">
+      <header className="bg-card text-primary-600 shadow-sm sticky top-0 z-50 border-b border-border">
         <nav className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <Link href={`/${currentLocale}`} className="text-2xl font-bold text-white">
-              IDMassage
+            <Link href={`/${currentLocale}`} className="text-2xl font-bold text-primary-600">
+              {config.nameWebsite}
             </Link>
             
             {/* Desktop Menu */}
             <div className="hidden md:flex items-center space-x-6">
               <Link 
                 href={`/${currentLocale}`}
-                className="text-white/90 hover:text-white transition-colors"
+                className="text-primary-600 hover:text-primary-700 transition-colors"
               >
                 {translations.header.home}
               </Link>
-              <a 
-                href={`#services`}
-                className="text-white/90 hover:text-white transition-colors"
+              <a
+                href="#services"
+                onClick={scrollToSection('services')}
+                className="text-primary-600 hover:text-primary-700 transition-colors"
               >
                 {translations.header.services}
               </a>
-              <a 
-                href={`#faq`}
-                className="text-white/90 hover:text-white transition-colors"
+              <a
+                href="#faq"
+                onClick={scrollToSection('faq')}
+                className="text-primary-600 hover:text-primary-700 transition-colors"
               >
                 {translations.header.faq}
               </a>
-              <a 
-                href={`#contact`}
-                className="text-white/90 hover:text-white transition-colors"
+              <a
+                href="#contact"
+                onClick={scrollToSection('contact')}
+                className="text-primary-600 hover:text-primary-700 transition-colors"
               >
                 {translations.header.contact}
               </a>
@@ -59,18 +84,63 @@ export default function Header({ translations, currentLocale }: HeaderProps) {
             
             {/* Desktop Language Switch & CTA */}
             <div className="hidden md:flex items-center space-x-4">
-              {/* Language Switch */}
-              <Link
-                href={alternatePath}
-                className="px-3 py-1 text-sm border border-white/20 rounded-md hover:bg-white/10 transition-colors text-white"
-              >
-                {alternateLocale.toUpperCase()}
-              </Link>
-              
+              {/* Language Select Dropdown */}
+              <div className="relative" ref={langDropdownRef}>
+                <button
+                  type="button"
+                  onClick={() => setIsLangOpen((v) => !v)}
+                  className="flex items-center gap-2 px-3 py-2 text-sm border border-primary-500 rounded-md hover:bg-accent transition-colors text-primary-600 bg-card min-w-[7rem]"
+                  aria-expanded={isLangOpen}
+                  aria-haspopup="listbox"
+                  aria-label="Select language"
+                >
+                  <span className="text-base" aria-hidden>{localeOptions[currentLocale].flag}</span>
+                  <span>{localeOptions[currentLocale].code}</span>
+                  <svg
+                    className={`w-4 h-4 ml-auto transition-transform ${isLangOpen ? 'rotate-180' : ''}`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                {isLangOpen && (
+                  <ul
+                    className="absolute right-0 top-full mt-1 py-1 w-56 rounded-lg border border-border bg-card shadow-lg z-50"
+                    role="listbox"
+                    aria-label="Language options"
+                  >
+                    {locales.map((loc) => {
+                      const opt = localeOptions[loc];
+                      const isActive = loc === currentLocale;
+                      return (
+                        <li key={loc} role="option" aria-selected={isActive}>
+                          <Link
+                            href={`/${loc}`}
+                            onClick={() => setIsLangOpen(false)}
+                            className={`flex items-center gap-3 px-4 py-2.5 text-sm transition-colors ${
+                              isActive
+                                ? 'bg-accent text-primary-600 font-medium'
+                                : 'text-primary-600 hover:bg-accent/70'
+                            }`}
+                          >
+                            <span className="text-lg">{opt.flag}</span>
+                            <span>{opt.code}</span>
+                            <span className="ml-auto text-text-muted">{opt.name}</span>
+                          </Link>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                )}
+              </div>
+
               {/* Zalo CTA */}
               <button
                 onClick={() => openZalo('header', currentLocale)}
-                className="px-4 py-2 bg-primary-600 text-white rounded-md hover:bg-primary-700 transition-colors text-sm font-medium"
+                className="px-4 py-2 bg-primary-600 text-background rounded-md hover:bg-primary-700 transition-colors text-sm font-medium"
               >
                 {translations.header.chatZalo}
               </button>
@@ -80,7 +150,7 @@ export default function Header({ translations, currentLocale }: HeaderProps) {
             <div className="md:hidden flex items-center space-x-3">
               <button
                 onClick={() => openZalo('header', currentLocale)}
-                className="p-2 bg-primary-600 text-white rounded-md hover:bg-primary-700 transition-colors"
+                className="p-2 bg-primary-600 text-background rounded-md hover:bg-primary-700 transition-colors"
                 aria-label="Chat Zalo"
               >
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -89,7 +159,7 @@ export default function Header({ translations, currentLocale }: HeaderProps) {
               </button>
               <button
                 onClick={() => setIsMobileMenuOpen(true)}
-                className="p-2 text-white hover:bg-white/10 rounded-md transition-colors"
+                className="p-2 text-primary-600 hover:bg-accent rounded-md transition-colors"
                 aria-label="Menu"
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -111,14 +181,14 @@ export default function Header({ translations, currentLocale }: HeaderProps) {
           />
           
           {/* Sidebar */}
-          <div className="fixed top-0 right-0 h-full w-64 bg-dark text-white z-50 md:hidden transform transition-transform duration-300 ease-in-out">
+          <div className="fixed top-0 right-0 h-full w-64 bg-card text-primary-600 z-50 md:hidden transform transition-transform duration-300 ease-in-out border-l border-border">
             <div className="flex flex-col h-full">
               {/* Header */}
-              <div className="flex items-center justify-between p-4 border-b border-white/20">
+              <div className="flex items-center justify-between p-4 border-b border-border">
                 <span className="text-xl font-bold">Menu</span>
                 <button
                   onClick={closeMobileMenu}
-                  className="p-2 hover:bg-white/10 rounded-md transition-colors"
+                  className="p-2 hover:bg-accent rounded-md transition-colors"
                   aria-label="Close menu"
                 >
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -133,41 +203,55 @@ export default function Header({ translations, currentLocale }: HeaderProps) {
                   <Link 
                     href={`/${currentLocale}`}
                     onClick={closeMobileMenu}
-                    className="text-white/90 hover:text-white transition-colors py-2"
+                    className="text-primary-600 hover:text-primary-700 transition-colors py-2"
                   >
                     {translations.header.home}
                   </Link>
-                  <a 
-                    href={`#services`}
-                    onClick={closeMobileMenu}
-                    className="text-white/90 hover:text-white transition-colors py-2"
+                  <a
+                    href="#services"
+                    onClick={scrollToSection('services')}
+                    className="text-primary-600 hover:text-primary-700 transition-colors py-2"
                   >
                     {translations.header.services}
                   </a>
-                  <a 
-                    href={`#faq`}
-                    onClick={closeMobileMenu}
-                    className="text-white/90 hover:text-white transition-colors py-2"
+                  <a
+                    href="#faq"
+                    onClick={scrollToSection('faq')}
+                    className="text-primary-600 hover:text-primary-700 transition-colors py-2"
                   >
                     {translations.header.faq}
                   </a>
-                  <a 
-                    href={`#contact`}
-                    onClick={closeMobileMenu}
-                    className="text-white/90 hover:text-white transition-colors py-2"
+                  <a
+                    href="#contact"
+                    onClick={scrollToSection('contact')}
+                    className="text-primary-600 hover:text-primary-700 transition-colors py-2"
                   >
                     {translations.header.contact}
                   </a>
                   
-                  {/* Language Switch */}
-                  <div className="pt-4 border-t border-white/20">
-                    <Link
-                      href={alternatePath}
-                      onClick={closeMobileMenu}
-                      className="block px-4 py-2 border border-white/20 rounded-md hover:bg-white/10 transition-colors text-center"
-                    >
-                      {alternateLocale.toUpperCase()}
-                    </Link>
+                  {/* Language Select (mobile): flag + code + name */}
+                  <div className="pt-4 border-t border-border">
+                    <p className="text-xs font-medium text-text-muted mb-2 uppercase tracking-wide">Ngôn ngữ</p>
+                    <div className="space-y-1 rounded-lg border border-border overflow-hidden">
+                      {locales.map((loc) => {
+                        const opt = localeOptions[loc];
+                        const isActive = loc === currentLocale;
+                        return (
+                          <Link
+                            key={loc}
+                            href={`/${loc}`}
+                            onClick={() => { closeMobileMenu(); }}
+                            className={`flex items-center gap-3 px-4 py-3 text-sm transition-colors ${
+                              isActive ? 'bg-accent text-primary-600 font-medium' : 'hover:bg-accent/70 text-primary-600'
+                            }`}
+                          >
+                            <span className="text-lg">{opt.flag}</span>
+                            <span>{opt.code}</span>
+                            <span className="ml-auto text-text-muted">{opt.name}</span>
+                          </Link>
+                        );
+                      })}
+                    </div>
                   </div>
                   
                   {/* Zalo CTA */}
@@ -176,7 +260,7 @@ export default function Header({ translations, currentLocale }: HeaderProps) {
                       openZalo('header_mobile', currentLocale);
                       closeMobileMenu();
                     }}
-                    className="w-full px-4 py-2 bg-primary-600 text-white rounded-md hover:bg-primary-700 transition-colors font-medium"
+                    className="w-full px-4 py-2 bg-primary-600 text-background rounded-md hover:bg-primary-700 transition-colors font-medium"
                   >
                     {translations.header.chatZalo}
                   </button>

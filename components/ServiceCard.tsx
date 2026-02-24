@@ -4,6 +4,8 @@ import { useState } from 'react';
 import { openZalo } from '@/lib/zalo';
 import { type Locale } from '@/lib/i18n';
 import ServiceModal from './ServiceModal';
+import { useInView } from '@/lib/useInView';
+import config from '@/global-config';
 
 interface ServiceCardProps {
   name: string;
@@ -15,6 +17,7 @@ interface ServiceCardProps {
   cta: string;
   locale: Locale;
   serviceKey: string;
+  animDelay?: number;
 }
 
 export default function ServiceCard({
@@ -27,83 +30,89 @@ export default function ServiceCard({
   cta,
   locale,
   serviceKey,
+  animDelay = 0,
 }: ServiceCardProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { ref, isInView } = useInView<HTMLDivElement>();
 
   return (
     <>
-      <div className="bg-card rounded-lg shadow-md hover:shadow-xl transition-shadow overflow-hidden border border-border">
-        {/* Image - Clickable */}
-        {image && (
-          <div 
-            className="relative w-full h-48 bg-background cursor-pointer group"
-            onClick={() => setIsModalOpen(true)}
-          >
-            <img
-              src={image}
-              alt={name}
-              className="w-full h-full object-cover"
-              onError={(e) => {
-                const target = e.target as HTMLImageElement;
-                target.src = `https://via.placeholder.com/400x300/E5E7EB/6B7280?text=${encodeURIComponent(name)}`;
-                target.onerror = null;
-              }}
-            />
-            {/* Overlay on hover */}
-            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
-              <span className="text-white opacity-0 group-hover:opacity-100 text-sm font-medium bg-black/50 px-3 py-1 rounded">Xem chi tiết</span>
-            </div>
-          </div>
-        )}
-        
-        <div className="p-6">
-          <h3 
-            className="text-xl font-semibold text-text mb-2 cursor-pointer hover:text-primary-600 transition-colors"
-            onClick={() => setIsModalOpen(true)}
-          >
-            {name}
-          </h3>
-          <p className="text-text-muted mb-3 text-sm line-clamp-2">{description}</p>
-          
-          {/* Duration */}
-          {duration && (
-            <div className="mb-4 flex items-center text-sm text-text-muted">
-              <svg className="w-4 h-4 mr-2 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              <span>{duration}</span>
+      {/* Scroll-reveal wrapper */}
+      <div
+        ref={ref}
+        className={isInView ? 'animate-fade-up' : 'opacity-0'}
+        style={{ animationDelay: `${animDelay}ms` }}
+      >
+        {/* Card: hover lift + shadow */}
+        <div className="bg-card rounded-xl shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 overflow-hidden border border-border group cursor-pointer h-full flex flex-col">
+          {/* Image with zoom on hover; fallback to logo when missing or error */}
+          {(image || config.logo) && (
+            <div
+              className="relative w-full h-48 bg-background overflow-hidden"
+              onClick={() => setIsModalOpen(true)}
+            >
+              <img
+                src={image || config.logo}
+                alt={name}
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-in-out"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.src = config.logo;
+                  target.onerror = null;
+                }}
+              />
+              {/* Overlay: dark tint + label on hover */}
+              <div className="absolute inset-0 bg-primary-600/0 group-hover:bg-primary-600/20 transition-colors duration-300 flex items-center justify-center">
+                <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm font-semibold bg-primary-600/80 px-4 py-1.5 rounded-full backdrop-blur-sm">
+                  Xem chi tiết
+                </span>
+              </div>
             </div>
           )}
-          
-          {/* CTA Buttons */}
-          <div className="flex gap-2">
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                setIsModalOpen(true);
-              }}
-              className="flex-1 px-4 py-2 bg-background text-text border border-border rounded-md hover:bg-background/80 transition-colors font-medium text-sm"
+
+          <div className="p-6 flex flex-col flex-1">
+            {/* Title */}
+            <h3
+              className="text-xl font-semibold text-text mb-2 hover:text-primary-600 transition-colors duration-200"
+              onClick={() => setIsModalOpen(true)}
             >
-              Xem chi tiết
-            </button>
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                openZalo(serviceKey, locale);
-              }}
-              className="w-10 h-10 bg-primary-600 text-white rounded-md hover:bg-primary-700 transition-colors flex items-center justify-center flex-shrink-0"
-              aria-label={cta}
-              title={cta}
-            >
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2C6.48 2 2 6.48 2 12c0 1.54.36 2.98.97 4.29L1 23l6.71-1.97C9.02 21.64 10.46 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.38 0-2.68-.35-3.81-.96l-.27-.15-2.88.84.84-2.88-.15-.27C5.35 14.68 5 13.38 5 12c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7z"/>
-              </svg>
-            </button>
+              {name}
+            </h3>
+            <p className="text-text-muted mb-3 text-sm line-clamp-2">{description}</p>
+
+            {/* Duration */}
+            {duration && (
+              <div className="mb-4 flex items-center text-sm text-text-muted">
+                <svg className="w-4 h-4 mr-2 text-primary-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>{duration}</span>
+              </div>
+            )}
+
+            {/* CTAs */}
+            <div className="flex gap-2 mt-auto">
+              <button
+                onClick={(e) => { e.stopPropagation(); setIsModalOpen(true); }}
+                className="flex-1 px-4 py-2 bg-background text-text border border-border rounded-lg hover:bg-accent hover:border-primary-500 transition-all duration-200 font-medium text-sm"
+              >
+                Xem chi tiết
+              </button>
+              <button
+                onClick={(e) => { e.stopPropagation(); openZalo(serviceKey, locale); }}
+                className="w-10 h-10 bg-primary-600 text-background rounded-lg hover:bg-primary-700 hover:scale-110 active:scale-95 transition-all duration-200 flex items-center justify-center flex-shrink-0 shadow-md hover:shadow-lg"
+                aria-label={cta}
+                title={cta}
+              >
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2C6.48 2 2 6.48 2 12c0 1.54.36 2.98.97 4.29L1 23l6.71-1.97C9.02 21.64 10.46 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.38 0-2.68-.35-3.81-.96l-.27-.15-2.88.84.84-2.88-.15-.27C5.35 14.68 5 13.38 5 12c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7z"/>
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Modal */}
       <ServiceModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}

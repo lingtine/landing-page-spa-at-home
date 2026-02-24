@@ -70,7 +70,7 @@
     }
   },
   "benefits": {
-    "title": "Tại sao chọn IDMassage?",
+    "title": "Tại sao chọn {name}?",
     "professional": {
       "title": "KTV chuyên nghiệp",
       "description": "Đội ngũ kỹ thuật viên được đào tạo bài bản, giàu kinh nghiệm"
@@ -139,7 +139,7 @@
     "hotline": "Hotline",
     "emailLabel": "Email",
     "links": {
-      "about": "Về IDMassage",
+      "about": "Về",
       "technicians": "Kỹ thuật viên",
       "privacy": "Chính sách bảo mật",
       "terms": "Điều khoản dịch vụ",

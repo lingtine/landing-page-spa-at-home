@@ -2,6 +2,7 @@
 
 import { openZalo } from '@/lib/zalo';
 import { type Locale } from '@/lib/i18n';
+import config from '@/global-config';
 
 interface ServiceModalProps {
   isOpen: boolean;
@@ -57,16 +58,16 @@ export default function ServiceModal({
             </button>
           </div>
 
-          {/* Image */}
-          {image && (
+          {/* Image; fallback to logo when missing or error */}
+          {(image || config.logo) && (
             <div className="relative w-full h-64 bg-background">
               <img
-                src={image}
+                src={image || config.logo}
                 alt={name}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;
-                  target.src = `https://via.placeholder.com/800x400/E5E7EB/6B7280?text=${encodeURIComponent(name)}`;
+                  target.src = config.logo;
                   target.onerror = null;
                 }}
               />
@@ -116,7 +117,7 @@ export default function ServiceModal({
                 openZalo(serviceKey, locale);
                 onClose();
               }}
-              className="w-full px-6 py-3 bg-primary-600 text-white rounded-md hover:bg-primary-700 transition-colors font-semibold text-lg flex items-center justify-center gap-2"
+              className="w-full px-6 py-3 bg-primary-600 text-background rounded-md hover:bg-primary-700 transition-colors font-semibold text-lg flex items-center justify-center gap-2"
             >
               <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 2C6.48 2 2 6.48 2 12c0 1.54.36 2.98.97 4.29L1 23l6.71-1.97C9.02 21.64 10.46 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.38 0-2.68-.35-3.81-.96l-.27-.15-2.88.84.84-2.88-.15-.27C5.35 14.68 5 13.38 5 12c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7z"/>

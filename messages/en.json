@@ -70,7 +70,7 @@
     }
   },
   "benefits": {
-    "title": "Why Choose IDMassage?",
+    "title": "Why Choose {name}?",
     "professional": {
       "title": "Professional Therapists",
       "description": "Well-trained, experienced team of massage therapists"
@@ -139,7 +139,7 @@
     "hotline": "Hotline",
     "emailLabel": "Email",
     "links": {
-      "about": "About IDMassage",
+      "about": "About",
       "technicians": "Therapists",
       "privacy": "Privacy Policy",
       "terms": "Terms of Service",

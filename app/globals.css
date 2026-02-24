@@ -3,8 +3,18 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 17, 24, 39; /* #111827 */
-  --background-rgb: 249, 250, 251; /* #F9FAFB */
+  --foreground-rgb: 43, 27, 14; /* #2B1B0E */
+  --background-rgb: 249, 246, 234; /* #F9F6EA */
+}
+
+/* Cuộn mượt khi bấm link anchor (ví dụ #services, #faq, #contact) */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Tránh section bị che bởi header sticky khi scroll tới */
+section[id] {
+  scroll-margin-top: 5rem;
 }
 
 body {

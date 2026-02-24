@@ -1,7 +1,7 @@
 // i18n utility functions
-export type Locale = 'vi' | 'en';
+export type Locale = 'vi' | 'en' | 'ko';
 
-export const locales: Locale[] = ['vi', 'en'];
+export const locales: Locale[] = ['vi', 'en', 'ko'];
 export const defaultLocale: Locale = 'vi';
 
 // Load translations
@@ -14,11 +14,9 @@ export async function getTranslations(locale: Locale) {
 export function getLocaleFromPath(pathname: string): Locale {
   const segments = pathname.split('/').filter(Boolean);
   const firstSegment = segments[0];
-  
-  if (firstSegment === 'en' || firstSegment === 'vi') {
+  if (locales.includes(firstSegment as Locale)) {
     return firstSegment as Locale;
   }
-  
   return defaultLocale;
 }
 
@@ -26,10 +24,8 @@ export function getLocaleFromPath(pathname: string): Locale {
 export function getPathnameWithoutLocale(pathname: string): string {
   const segments = pathname.split('/').filter(Boolean);
   const firstSegment = segments[0];
-  
-  if (firstSegment === 'en' || firstSegment === 'vi') {
+  if (locales.includes(firstSegment as Locale)) {
     return '/' + segments.slice(1).join('/');
   }
-  
   return pathname;
 }
