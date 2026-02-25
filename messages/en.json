@@ -7,13 +7,13 @@
     "chatZalo": "Chat Zalo"
   },
   "hero": {
-    "headline": "Home & Hotel Massage — Book quickly via Zalo",
-    "subheadline": "Professional massage service, come to your place with private space. Book now with just a Zalo message.",
+    "headline": "Professional Massage — Premium Relaxation",
+    "subheadline": "Expert massage techniques with high-quality natural oils — experience full physical and mental recovery.",
     "ctaPrimary": "Book via Zalo",
     "ctaSecondary": "Call Now"
   },
   "services": {
-    "title": "Our Services",
+    "title": "Pricing",
     "atHome": {
       "name": "Home Massage",
       "description": "Relax in your own private space with professional massage service",
@@ -72,80 +72,71 @@
   "benefits": {
     "title": "Why Choose {name}?",
     "professional": {
-      "title": "Professional Therapists",
-      "description": "Well-trained, experienced team of massage therapists"
+      "title": "Expert Massage Techniques",
+      "description": "Our therapists are trained in deep-tissue and therapeutic massage to effectively relieve muscle tension and pain"
     },
     "punctual": {
-      "title": "On-time Service",
-      "description": "Commitment to arrive on time, no waiting"
+      "title": "Deep Relaxation & Recovery",
+      "description": "Each session is carefully tailored to your tight muscle areas, delivering total-body relief and genuine relaxation"
     },
     "private": {
-      "title": "Private Space",
-      "description": "Relax in your familiar space"
-    },
-    "clean": {
-      "title": "Clean Equipment",
-      "description": "All equipment is thoroughly cleaned and disinfected"
-    },
-    "fast": {
-      "title": "Quick Booking Support",
-      "description": "Book with just a Zalo message, response within minutes"
+      "title": "Premium Oils & Equipment",
+      "description": "We use high-quality natural essential oils and professional massage tools, ensuring hygiene and optimal results"
     }
   },
   "steps": {
     "title": "Booking Process",
     "step1": {
-      "title": "Choose Service",
-      "description": "Select the massage service that suits your needs"
+      "title": "Check Pricing & Choose Package",
+      "description": "Select the duration and service package that fits your needs"
     },
     "step2": {
-      "title": "Send Info via Zalo",
-      "description": "Send location and desired time via Zalo"
+      "title": "Book via Zalo",
+      "description": "Send your chosen package and preferred time via Zalo — confirmed within minutes"
     },
     "step3": {
-      "title": "Therapist Arrives & Service",
-      "description": "Therapist will arrive on time and provide the service"
+      "title": "Arrive & Enjoy",
+      "description": "Show up at your scheduled time and enjoy a professional massage experience"
     }
   },
   "faq": {
     "title": "Frequently Asked Questions",
     "q1": {
-      "question": "What areas do you serve?",
-      "answer": "We serve Hue City and surrounding areas. Please contact us to confirm specific areas."
+      "question": "Are the therapists certified?",
+      "answer": "Yes. All therapists are professionally trained, certified, and have years of experience in therapeutic massage."
     },
     "q2": {
       "question": "What are your service hours?",
-      "answer": "We serve from 8:00 AM - 10:00 PM daily, including weekends and holidays."
+      "answer": "We serve from 8:00 AM - 11:30 PM daily, including weekends and holidays."
     },
     "q3": {
       "question": "Can I reschedule or cancel?",
       "answer": "Yes, you can reschedule or cancel by contacting us via Zalo or hotline at least 2 hours in advance."
     },
     "q4": {
-      "question": "What do I need to prepare?",
-      "answer": "You only need to prepare a clean and comfortable space. We will bring all necessary equipment."
+      "question": "What oils do you use?",
+      "answer": "We use premium natural essential oils that are skin-safe and effective for muscle relaxation and energy recovery."
     },
     "q5": {
       "question": "What is your privacy policy?",
-      "answer": "We commit to protecting customer information and ensuring absolute privacy during service."
+      "answer": "We are fully committed to protecting customer information and will never share it with third parties."
     }
   },
   "footer": {
-    "company": "ID-Group Trading and Services Co., Ltd.",
-    "address": "04 Dong Da, Thuan Hoa Ward, Hue City",
-    "phone": "0886 517 257",
-    "email": "info@idmassage.com",
+    "titleAbout": "About {name}",
+    "tagline": "Professional massage service. Expert techniques — a premium relaxation experience.",
+    "titleServices": "Explore",
+    "titleContact": "Book Now",
+    "company": "",
     "zalo": "Zalo",
     "hotline": "Hotline",
     "emailLabel": "Email",
     "links": {
-      "about": "About",
-      "technicians": "Therapists",
-      "privacy": "Privacy Policy",
-      "terms": "Terms of Service",
-      "rules": "Operating Rules"
+      "services": "Our Services",
+      "faq": "FAQ",
+      "contact": "Contact Us"
     },
-    "copyright": "© 2026. ID-Group Trading and Services Co., Ltd.",
-    "license": "Business License: 3301735772 issued by Hue City Planning & Investment Department on 15/11/2024"
+    "copyright": "© 2026",
+    "license": "Business License: 3301735772 issued by Ho Chi Minh City Planning & Investment Department on 15/11/2024"
   }
 }

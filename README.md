@@ -93,4 +93,4 @@ npm run build
 
 ## License
 
-© 2026. Công ty TNHH Thương Mại và Dịch vụ ID-Group
+© 2026

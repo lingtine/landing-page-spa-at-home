@@ -7,13 +7,13 @@
     "chatZalo": "자로 채팅"
   },
   "hero": {
-    "headline": "홈 & 호텔 마사지 — 자로로 빠른 예약",
-    "subheadline": "전문 마사지 서비스, 프라이빗 공간에서 방문 서비스. 자로 메시지 한 통으로 지금 예약하세요.",
+    "headline": "전문 마사지 — 프리미엄 힐링 경험",
+    "subheadline": "전문 마사지 기술과 고급 천연 오일로 신체와 정신의 완전한 회복을 경험하세요.",
     "ctaPrimary": "자로로 예약",
     "ctaSecondary": "전화하기"
   },
   "services": {
-    "title": "서비스 안내",
+    "title": "요금표",
     "atHome": {
       "name": "홈 마사지",
       "description": "전문 마사지 서비스로 나만의 공간에서 휴식",
@@ -72,80 +72,71 @@
   "benefits": {
     "title": "{name}을(를) 선택하는 이유?",
     "professional": {
-      "title": "전문 테라피스트",
-      "description": "잘 훈련되고 경험 많은 마사지 테라피스트 팀"
+      "title": "전문 마사지 기술",
+      "description": "근육 긴장 완화와 통증 해소에 특화된 심부 조직 마사지 기법을 갖춘 전문 테라피스트가 서비스를 제공합니다"
     },
     "punctual": {
-      "title": "정시 서비스",
-      "description": "정확한 시간에 방문, 대기 없이"
+      "title": "깊은 이완 & 빠른 회복",
+      "description": "긴장된 근육 부위에 집중한 맞춤형 시술로 전신 피로를 풀어드리고 진정한 휴식을 선사합니다"
     },
     "private": {
-      "title": "프라이빗 공간",
-      "description": "익숙한 공간에서 휴식"
-    },
-    "clean": {
-      "title": "청결한 장비",
-      "description": "모든 장비는 철저히 세척 및 소독됩니다"
-    },
-    "fast": {
-      "title": "빠른 예약 지원",
-      "description": "자로 메시지 한 통으로 예약, 몇 분 내 응답"
+      "title": "프리미엄 오일 & 전문 장비",
+      "description": "고품질 천연 에센셜 오일과 전문 마사지 도구를 사용하여 최상의 위생 상태와 효과를 보장합니다"
     }
   },
   "steps": {
     "title": "예약 절차",
     "step1": {
-      "title": "서비스 선택",
-      "description": "필요에 맞는 마사지 서비스를 선택하세요"
+      "title": "요금표 확인 & 패키지 선택",
+      "description": "원하시는 시간과 서비스 패키지를 선택하세요"
     },
     "step2": {
-      "title": "자로로 정보 전송",
-      "description": "위치와 희망 시간을 자로로 보내세요"
+      "title": "자로로 예약",
+      "description": "선택한 패키지와 희망 시간을 자로로 보내주세요 — 몇 분 내 확인"
     },
     "step3": {
-      "title": "테라피스트 방문 및 서비스",
-      "description": "테라피스트가 정시에 방문하여 서비스를 제공합니다"
+      "title": "방문 & 즐기기",
+      "description": "예약 시간에 맞춰 방문하여 전문 마사지 서비스를 즐기세요"
     }
   },
   "faq": {
     "title": "자주 묻는 질문",
     "q1": {
-      "question": "어느 지역을 서비스하나요?",
-      "answer": "후에 시 및 인근 지역을 서비스합니다. 구체적인 지역은 문의해 주세요."
+      "question": "테라피스트는 자격증이 있나요?",
+      "answer": "네. 모든 테라피스트는 전문 교육을 받고 자격증을 보유하며 마사지 분야에서 수년간의 경험을 갖추고 있습니다."
     },
     "q2": {
       "question": "서비스 시간은 어떻게 되나요?",
-      "answer": "매일 오전 8시부터 오후 10시까지, 주말 및 공휴일 포함 서비스합니다."
+      "answer": "매일 오전 8시부터 오후 11시 30분까지, 주말 및 공휴일 포함 서비스합니다."
     },
     "q3": {
       "question": "예약 변경 또는 취소가 가능한가요?",
       "answer": "네, 자로 또는 핫라인으로 최소 2시간 전에 연락하시면 변경 또는 취소가 가능합니다."
     },
     "q4": {
-      "question": "준비해야 할 것이 있나요?",
-      "answer": "깨끗하고 편안한 공간만 준비해 주시면 됩니다. 필요한 장비는 저희가 모두 갖춰 갑니다."
+      "question": "어떤 오일을 사용하나요?",
+      "answer": "피부에 안전하고 근육 이완과 에너지 회복에 효과적인 고급 천연 에센셜 오일을 사용합니다."
     },
     "q5": {
       "question": "개인정보 보호 정책은 어떻게 되나요?",
-      "answer": "고객 정보를 보호하고 서비스 중 절대적인 프라이버시를 보장합니다."
+      "answer": "고객 정보를 철저히 보호하며 제3자와 절대 공유하지 않습니다."
     }
   },
   "footer": {
-    "company": "ID-Group Trading and Services Co., Ltd.",
-    "address": "04 Dong Da, Thuan Hoa Ward, Hue City",
-    "phone": "0886 517 257",
-    "email": "info@idmassage.com",
+    "titleAbout": "{name} 소개",
+    "tagline": "전문 마사지 서비스. 전문 기술 — 최고의 휴식 경험.",
+    "titleServices": "바로가기",
+    "titleContact": "예약 문의",
+    "company": "",
     "zalo": "자로",
     "hotline": "핫라인",
     "emailLabel": "이메일",
     "links": {
-      "about": "소개",
-      "technicians": "테라피스트",
-      "privacy": "개인정보처리방침",
-      "terms": "이용약관",
-      "rules": "운영 규정"
+      "services": "서비스 보기",
+      "faq": "자주 묻는 질문",
+      "contact": "지금 문의하기"
     },
-    "copyright": "© 2026. ID-Group Trading and Services Co., Ltd.",
-    "license": "Business License: 3301735772 issued by Hue City Planning & Investment Department on 15/11/2024"
+    "copyright": "© 2026",
+    "license": "Business License: 3301735772 issued by Ho Chi Minh City Planning & Investment Department on 15/11/2024"
   }
 }

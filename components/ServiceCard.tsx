@@ -7,6 +7,14 @@ import ServiceModal from './ServiceModal';
 import { useInView } from '@/lib/useInView';
 import config from '@/global-config';
 
+interface ServicePrice {
+  mode: string;
+  label: string;
+  before_23_30: Record<string, number>;
+  after_23_30: Record<string, number>;
+  addons?: Record<string, number>;
+}
+
 interface ServiceCardProps {
   name: string;
   description: string;
@@ -18,7 +26,12 @@ interface ServiceCardProps {
   locale: Locale;
   serviceKey: string;
   animDelay?: number;
+  servicePrices?: ServicePrice[];
+  currency?: string;
 }
+
+/** Format số thành dạng 449.000₫ */
+const formatVND = (amount: number) => amount.toLocaleString('vi-VN') + '₫';
 
 export default function ServiceCard({
   name,
@@ -31,7 +44,11 @@ export default function ServiceCard({
   locale,
   serviceKey,
   animDelay = 0,
+  servicePrices,
+  currency,
 }: ServiceCardProps) {
+  /** Giá khởi điểm: chế độ random_ktv, 60 phút, trước 23:30 */
+  const startingPrice = servicePrices?.find((p) => p.mode === 'random_ktv')?.before_23_30['60'];
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { ref, isInView } = useInView<HTMLDivElement>();
 
@@ -45,30 +62,43 @@ export default function ServiceCard({
       >
         {/* Card: hover lift + shadow */}
         <div className="bg-card rounded-xl shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 overflow-hidden border border-border group cursor-pointer h-full flex flex-col">
-          {/* Image with zoom on hover; fallback to logo when missing or error */}
-          {(image || config.logo) && (
-            <div
-              className="relative w-full h-48 bg-background overflow-hidden"
-              onClick={() => setIsModalOpen(true)}
-            >
-              <img
-                src={image || config.logo}
-                alt={name}
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-in-out"
-                onError={(e) => {
-                  const target = e.target as HTMLImageElement;
-                  target.src = config.logo;
-                  target.onerror = null;
-                }}
-              />
-              {/* Overlay: dark tint + label on hover */}
-              <div className="absolute inset-0 bg-primary-600/0 group-hover:bg-primary-600/20 transition-colors duration-300 flex items-center justify-center">
-                <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm font-semibold bg-primary-600/80 px-4 py-1.5 rounded-full backdrop-blur-sm">
-                  Xem chi tiết
-                </span>
-              </div>
+          {/* Image block: dùng logo chủ động khi chưa có ảnh thật */}
+          <div
+            className="relative w-full h-48 bg-background overflow-hidden"
+            onClick={() => setIsModalOpen(true)}
+          >
+            <img
+              src={image ?? config.logo}
+              alt={name}
+              className={`w-full h-full transition-transform duration-500 ease-in-out ${
+                image
+                  ? 'object-cover group-hover:scale-110'
+                  : 'object-contain p-6'
+              }`}
+              onError={(e) => {
+                const target = e.target as HTMLImageElement;
+                target.src = config.logo;
+                target.className = target.className
+                  .replace('object-cover', 'object-contain')
+                  .replace('group-hover:scale-110', '');
+                target.onerror = null;
+              }}
+            />
+
+            {/* Badge giá khởi điểm */}
+            {startingPrice && (
+              <span className="absolute top-3 left-3 bg-primary-600/90 text-background text-xs font-semibold px-2.5 py-1 rounded-full backdrop-blur-sm">
+                Từ {formatVND(startingPrice)}
+              </span>
+            )}
+
+            {/* Overlay: dark tint + label on hover */}
+            <div className="absolute inset-0 bg-primary-600/0 group-hover:bg-primary-600/20 transition-colors duration-300 flex items-center justify-center">
+              <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm font-semibold bg-primary-600/80 px-4 py-1.5 rounded-full backdrop-blur-sm">
+                Xem chi tiết
+              </span>
             </div>
-          )}
+          </div>
 
           <div className="p-6 flex flex-col flex-1">
             {/* Title */}
@@ -125,6 +155,8 @@ export default function ServiceCard({
         cta={cta}
         locale={locale}
         serviceKey={serviceKey}
+        servicePrices={servicePrices}
+        currency={currency}
       />
     </>
   );

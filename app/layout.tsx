@@ -6,9 +6,9 @@ import config from "@/global-config";
 const inter = Inter({ subsets: ["latin", "vietnamese"] });
 
 export const metadata: Metadata = {
-  title: `${config.nameWebsite} - Dịch vụ Massage tại nhà và khách sạn`,
-  description: "Dịch vụ massage chuyên nghiệp tại nhà và khách sạn. Đặt lịch nhanh qua Zalo. KTV chuyên nghiệp, đến tận nơi đúng giờ.",
-  keywords: "massage tại nhà, massage khách sạn, massage Huế, đặt lịch massage",
+  title: `${config.nameWebsite} - Dịch vụ Massage chuyên nghiệp`,
+  description: "Dịch vụ massage chuyên nghiệp tại tiệm. Kỹ thuật chuyên sâu, tinh dầu thiên nhiên cao cấp. Đặt lịch nhanh qua Zalo.",
+  keywords: "massage chuyên nghiệp, massage Huế, đặt lịch massage",
   icons: {
     icon: config.logo,
     apple: config.logo,

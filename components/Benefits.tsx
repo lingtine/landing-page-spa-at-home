@@ -15,11 +15,9 @@ export default function Benefits({ translations }: BenefitsProps) {
     translations.benefits.professional,
     translations.benefits.punctual,
     translations.benefits.private,
-    translations.benefits.clean,
-    translations.benefits.fast,
   ];
 
-  const icons = ['👨‍⚕️', '⏰', '🏠', '✨', '⚡'];
+  const icons = ['🤲', '✨', '🌿'];
 
   return (
     <section className="py-20 px-4 bg-background overflow-hidden">
@@ -34,7 +32,7 @@ export default function Benefits({ translations }: BenefitsProps) {
         </h2>
 
         {/* Staggered cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
           {benefits.map((benefit: any, index: number) => (
             <div
               key={index}

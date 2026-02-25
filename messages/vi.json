@@ -7,17 +7,17 @@
     "chatZalo": "Chat Zalo"
   },
   "hero": {
-    "headline": "Massage tại nhà & khách sạn — đặt nhanh qua Zalo",
-    "subheadline": "Dịch vụ massage chuyên nghiệp, đến tận nơi với không gian riêng tư. Đặt lịch ngay chỉ với một tin nhắn Zalo.",
+    "headline": "Massage chuyên nghiệp — thư giãn đẳng cấp",
+    "subheadline": "Kỹ thuật massage chuyên sâu, tinh dầu thiên nhiên cao cấp — trải nghiệm phục hồi thể chất và tinh thần toàn diện.",
     "ctaPrimary": "Đặt lịch qua Zalo",
     "ctaSecondary": "Gọi ngay"
   },
   "services": {
-    "title": "Dịch vụ của chúng tôi",
+    "title": "Bảng giá",
     "atHome": {
       "name": "Massage tại nhà",
       "description": "Thư giãn ngay tại không gian riêng của bạn với dịch vụ massage chuyên nghiệp",
-      "details": "Dịch vụ massage tại nhà mang đến trải nghiệm thư giãn tuyệt vời ngay tại không gian quen thuộc của bạn. Kỹ thuật viên sẽ đến tận nơi với đầy đủ dụng cụ chuyên nghiệp, giúp bạn tiết kiệm thời gian di chuyển và tận hưởng không gian riêng tư.",
+      "details": "Dịch vụ massage chuyên nghiệp với kỹ thuật viên được đào tạo bài bản, tinh dầu thiên nhiên cao cấp và không gian tiệm sang trọng, giúp bạn thư giãn và phục hồi thể chất toàn diện.",
       "duration": "60-120 phút",
       "features": ["Không gian riêng tư", "Tiết kiệm thời gian", "Dụng cụ đầy đủ", "KTV chuyên nghiệp"],
       "image": "/images/massage-at-home.jpg",
@@ -72,80 +72,71 @@
   "benefits": {
     "title": "Tại sao chọn {name}?",
     "professional": {
-      "title": "KTV chuyên nghiệp",
-      "description": "Đội ngũ kỹ thuật viên được đào tạo bài bản, giàu kinh nghiệm"
+      "title": "Kỹ thuật massage chuyên sâu",
+      "description": "Đội ngũ KTV được đào tạo bài bản, nắm vững các kỹ thuật massage trị liệu giúp giảm đau nhức, thư giãn cơ bắp hiệu quả"
     },
     "punctual": {
-      "title": "Đến tận nơi đúng giờ",
-      "description": "Cam kết đến đúng giờ hẹn, không làm bạn phải chờ đợi"
+      "title": "Thư giãn sâu, phục hồi nhanh",
+      "description": "Mỗi liệu trình được thực hiện tỉ mỉ, tập trung vào vùng cơ căng thẳng để mang lại cảm giác thư thái toàn diện"
     },
     "private": {
-      "title": "Không gian riêng tư",
-      "description": "Thư giãn trong không gian quen thuộc của chính bạn"
-    },
-    "clean": {
-      "title": "Dụng cụ sạch sẽ",
-      "description": "Tất cả dụng cụ được vệ sinh và khử trùng kỹ lưỡng"
-    },
-    "fast": {
-      "title": "Hỗ trợ đặt lịch nhanh",
-      "description": "Đặt lịch chỉ với một tin nhắn Zalo, phản hồi trong vài phút"
+      "title": "Dụng cụ & tinh dầu chất lượng cao",
+      "description": "Sử dụng tinh dầu thiên nhiên cao cấp và dụng cụ massage chuyên nghiệp, đảm bảo vệ sinh và hiệu quả tối ưu"
     }
   },
   "steps": {
     "title": "Quy trình đặt lịch",
     "step1": {
-      "title": "Chọn dịch vụ",
-      "description": "Chọn dịch vụ massage phù hợp với nhu cầu của bạn"
+      "title": "Xem bảng giá & chọn gói",
+      "description": "Chọn thời lượng và gói dịch vụ phù hợp với nhu cầu của bạn"
     },
     "step2": {
-      "title": "Chat Zalo gửi thông tin",
-      "description": "Gửi địa điểm và thời gian mong muốn qua Zalo"
+      "title": "Nhắn tin Zalo đặt lịch",
+      "description": "Gửi thông tin gói dịch vụ và thời gian mong muốn qua Zalo, xác nhận trong vài phút"
     },
     "step3": {
-      "title": "KTV đến & thực hiện",
-      "description": "Kỹ thuật viên sẽ đến đúng giờ và thực hiện dịch vụ"
+      "title": "Đến & tận hưởng",
+      "description": "Có mặt đúng giờ hẹn, trải nghiệm dịch vụ massage chuyên nghiệp"
     }
   },
   "faq": {
     "title": "Câu hỏi thường gặp",
     "q1": {
-      "question": "Khu vực nào được phục vụ?",
-      "answer": "Chúng tôi phục vụ tại thành phố Huế và các khu vực lân cận. Vui lòng liên hệ để xác nhận khu vực cụ thể."
+      "question": "Các kỹ thuật viên có chứng chỉ không?",
+      "answer": "Có. Tất cả KTV đều được đào tạo bài bản, có chứng chỉ chuyên môn và nhiều năm kinh nghiệm trong lĩnh vực massage trị liệu."
     },
     "q2": {
       "question": "Thời gian phục vụ là khi nào?",
-      "answer": "Chúng tôi phục vụ từ 8:00 - 22:00 hàng ngày, bao gồm cả cuối tuần và ngày lễ."
+      "answer": "Chúng tôi phục vụ từ 8:00 - 23:30 hàng ngày, bao gồm cả cuối tuần và ngày lễ."
     },
     "q3": {
       "question": "Có thể đổi lịch hoặc hủy lịch không?",
       "answer": "Có, bạn có thể đổi hoặc hủy lịch hẹn bằng cách liên hệ qua Zalo hoặc hotline trước ít nhất 2 giờ."
     },
     "q4": {
-      "question": "Có cần chuẩn bị gì trước khi đặt lịch?",
-      "answer": "Bạn chỉ cần chuẩn bị không gian sạch sẽ và thoải mái. Chúng tôi sẽ mang đầy đủ dụng cụ cần thiết."
+      "question": "Sử dụng loại tinh dầu nào?",
+      "answer": "Chúng tôi sử dụng tinh dầu thiên nhiên cao cấp, an toàn cho da, giúp thư giãn cơ bắp và phục hồi năng lượng hiệu quả."
     },
     "q5": {
       "question": "Chính sách bảo mật như thế nào?",
-      "answer": "Chúng tôi cam kết bảo mật thông tin khách hàng và đảm bảo không gian riêng tư tuyệt đối trong quá trình phục vụ."
+      "answer": "Chúng tôi cam kết bảo mật thông tin khách hàng tuyệt đối và không chia sẻ với bên thứ ba."
     }
   },
   "footer": {
-    "company": "Công ty TNHH Thương Mại và Dịch vụ ID-Group",
-    "address": "04 Đống Đa, Phường Thuận Hoá, Thành phố Huế",
-    "phone": "0886 517 257",
-    "email": "info@idmassage.com",
+    "titleAbout": "Về {name}",
+    "tagline": "Dịch vụ massage chuyên nghiệp. Kỹ thuật chuyên sâu — trải nghiệm thư giãn đẳng cấp.",
+    "titleServices": "Khám phá",
+    "titleContact": "Liên hệ đặt lịch",
+    "company": "",
     "zalo": "Zalo",
     "hotline": "Hotline",
     "emailLabel": "Email",
     "links": {
-      "about": "Về",
-      "technicians": "Kỹ thuật viên",
-      "privacy": "Chính sách bảo mật",
-      "terms": "Điều khoản dịch vụ",
-      "rules": "Quy chế hoạt động"
+      "services": "Xem dịch vụ",
+      "faq": "Câu hỏi thường gặp",
+      "contact": "Liên hệ ngay"
     },
-    "copyright": "© 2026. Công ty TNHH Thương Mại và Dịch vụ ID-Group",
-    "license": "GPDKKD: 3301735772 do sở Kế hoạch & Đầu tư TP.Huế cấp ngày 15/11/2024"
+    "copyright": "© 2026",
+    "license": "GPDKKD: 3301735772 do sở Kế hoạch & Đầu tư TP.HCM cấp ngày 15/11/2024"
   }
 }

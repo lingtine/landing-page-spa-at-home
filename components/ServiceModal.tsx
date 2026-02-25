@@ -4,6 +4,14 @@ import { openZalo } from '@/lib/zalo';
 import { type Locale } from '@/lib/i18n';
 import config from '@/global-config';
 
+interface ServicePrice {
+  mode: string;
+  label: string;
+  before_23_30: Record<string, number>;
+  after_23_30: Record<string, number>;
+  addons?: Record<string, number>;
+}
+
 interface ServiceModalProps {
   isOpen: boolean;
   onClose: () => void;
@@ -16,7 +24,14 @@ interface ServiceModalProps {
   cta: string;
   locale: Locale;
   serviceKey: string;
+  servicePrices?: ServicePrice[];
+  currency?: string;
 }
+
+/** Format số thành dạng 449.000₫ */
+const formatVND = (amount: number) => amount.toLocaleString('vi-VN') + '₫';
+
+const DURATIONS = ['60', '90', '120'] as const;
 
 export default function ServiceModal({
   isOpen,
@@ -30,8 +45,13 @@ export default function ServiceModal({
   cta,
   locale,
   serviceKey,
+  servicePrices,
 }: ServiceModalProps) {
   if (!isOpen) return null;
+
+  const randomKTV = servicePrices?.find((p) => p.mode === 'random_ktv');
+  const chooseKTV = servicePrices?.find((p) => p.mode === 'choose_ktv');
+  const addons = randomKTV?.addons ?? {};
 
   return (
     <>
@@ -58,21 +78,20 @@ export default function ServiceModal({
             </button>
           </div>
 
-          {/* Image; fallback to logo when missing or error */}
-          {(image || config.logo) && (
-            <div className="relative w-full h-64 bg-background">
-              <img
-                src={image || config.logo}
-                alt={name}
-                className="w-full h-full object-contain"
-                onError={(e) => {
-                  const target = e.target as HTMLImageElement;
-                  target.src = config.logo;
-                  target.onerror = null;
-                }}
-              />
-            </div>
-          )}
+          {/* Image: logo chủ động khi chưa có ảnh thật */}
+          <div className="relative w-full h-64 bg-background flex items-center justify-center">
+            <img
+              src={image ?? config.logo}
+              alt={name}
+              className={`w-full h-full ${image ? 'object-cover' : 'object-contain p-8'}`}
+              onError={(e) => {
+                const target = e.target as HTMLImageElement;
+                target.src = config.logo;
+                target.className = 'w-full h-full object-contain p-8';
+                target.onerror = null;
+              }}
+            />
+          </div>
 
           {/* Content */}
           <div className="p-6">
@@ -83,6 +102,76 @@ export default function ServiceModal({
             {details && (
               <div className="mb-6">
                 <p className="text-text-muted leading-relaxed">{details}</p>
+              </div>
+            )}
+
+            {/* Bảng giá — 1 bảng duy nhất, header 2 tầng */}
+            {randomKTV && chooseKTV && (
+              <div className="mb-6">
+                <h3 className="text-lg font-semibold text-text mb-3">Bảng giá dịch vụ</h3>
+                <div className="overflow-x-auto rounded-xl border border-border">
+                  <table className="w-full text-sm">
+                    <thead>
+                      {/* Tầng 1: nhóm cột */}
+                      <tr className="bg-accent/70">
+                        <th className="text-left px-4 py-2.5 text-text font-semibold border-r border-border" rowSpan={2}>
+                          Thời lượng
+                        </th>
+                        <th className="text-center px-3 py-2 text-primary-600 font-semibold border-r border-border" colSpan={2}>
+                          KTV ngẫu nhiên
+                        </th>
+                        <th className="text-center px-3 py-2 text-primary-700 font-semibold" colSpan={2}>
+                          Chọn KTV
+                        </th>
+                      </tr>
+                      {/* Tầng 2: khung giờ */}
+                      <tr className="bg-accent/40 text-xs text-text-muted">
+                        <th className="px-3 py-2 text-center font-medium border-r border-border/60">Trước 23:30</th>
+                        <th className="px-3 py-2 text-center font-medium border-r border-border">Sau 23:30</th>
+                        <th className="px-3 py-2 text-center font-medium border-r border-border/60">Trước 23:30</th>
+                        <th className="px-3 py-2 text-center font-medium">Sau 23:30</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {DURATIONS.map((min, idx) => (
+                        <tr key={min} className={idx % 2 === 0 ? 'bg-card' : 'bg-background/50'}>
+                          <td className="px-4 py-3 font-medium text-text border-r border-border">
+                            {min} phút
+                          </td>
+                          <td className="px-3 py-3 text-center text-text border-r border-border/60">
+                            {formatVND(randomKTV.before_23_30[min])}
+                          </td>
+                          <td className="px-3 py-3 text-center text-text-muted border-r border-border">
+                            {formatVND(randomKTV.after_23_30[min])}
+                          </td>
+                          <td className="px-3 py-3 text-center font-medium text-primary-600 border-r border-border/60">
+                            {formatVND(chooseKTV.before_23_30[min])}
+                          </td>
+                          <td className="px-3 py-3 text-center text-primary-500">
+                            {formatVND(chooseKTV.after_23_30[min])}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+
+                {/* Ghi chú khung giờ + phụ phí */}
+                <div className="mt-3 space-y-1.5 text-xs text-text-muted">
+                  <p className="flex items-center gap-1.5">
+                    <svg className="w-3.5 h-3.5 text-primary-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    Giá sau 23:30 áp dụng cho các ca đặt lịch muộn.
+                  </p>
+                  {Object.entries(addons).map(([key, val]) => (
+                    <p key={key} className="flex items-center gap-1.5">
+                      <span className="text-primary-500 font-bold">+</span>
+                      {key === 'cao_gio_or_giac_hoi' ? 'Phụ phí Cao gió / Giác hơi' : key}:
+                      <span className="font-semibold text-text">{formatVND(val as number)}</span>
+                    </p>
+                  ))}
+                </div>
               </div>
             )}
             

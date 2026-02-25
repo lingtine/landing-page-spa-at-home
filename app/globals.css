@@ -12,9 +12,9 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Tránh section bị che bởi header sticky khi scroll tới */
+/* Tránh section bị che bởi header floating pill khi scroll tới */
 section[id] {
-  scroll-margin-top: 5rem;
+  scroll-margin-top: 5.5rem;
 }
 
 body {

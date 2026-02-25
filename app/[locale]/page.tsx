@@ -25,19 +25,19 @@ export async function generateMetadata({
   const translations = await getTranslations(locale);
   
   const titles: Record<Locale, string> = {
-    vi: `${config.nameWebsite} - Dịch vụ Massage tại nhà và khách sạn`,
-    en: `${config.nameWebsite} - Home & Hotel Massage Service`,
-    ko: `${config.nameWebsite} - 홈 & 호텔 마사지 서비스`,
+    vi: `${config.nameWebsite} - Dịch vụ Massage chuyên nghiệp`,
+    en: `${config.nameWebsite} - Professional Massage Service`,
+    ko: `${config.nameWebsite} - 전문 마사지 서비스`,
   };
   const descriptions: Record<Locale, string> = {
-    vi: 'Dịch vụ massage chuyên nghiệp tại nhà và khách sạn. Đặt lịch nhanh qua Zalo. KTV chuyên nghiệp, đến tận nơi đúng giờ.',
-    en: 'Professional massage service at home and hotel. Book quickly via Zalo. Professional therapists, on-time service.',
-    ko: '홈·호텔 전문 마사지 서비스. 자로로 빠른 예약. 전문 테라피스트, 정시 방문.',
+    vi: 'Dịch vụ massage chuyên nghiệp tại tiệm. Kỹ thuật chuyên sâu, tinh dầu thiên nhiên cao cấp. Đặt lịch nhanh qua Zalo.',
+    en: 'Professional massage service. Book quickly via Zalo. Professional therapists, on-time service.',
+    ko: '전문 마사지 서비스. 자로로 빠른 예약. 전문 테라피스트, 정시 방문.',
   };
   const keywords: Record<Locale, string> = {
-    vi: 'massage tại nhà, massage khách sạn, massage Huế, đặt lịch massage',
-    en: 'home massage, hotel massage, Hue massage, book massage',
-    ko: '홈 마사지, 호텔 마사지, 후에 마사지, 마사지 예약',
+    vi: 'massage chuyên nghiệp, massage Huế, đặt lịch massage',
+    en: 'professional massage, Hue massage, book massage',
+    ko: '전문 마사지, 후에 마사지, 마사지 예약',
   };
   const ogLocales: Record<Locale, string> = {
     vi: 'vi_VN',

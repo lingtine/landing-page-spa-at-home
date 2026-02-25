@@ -1,0 +1,59 @@
+{
+  "currency": "VND",
+  "cutoff_time": "23:30",
+  "technician_pay": {
+    "before_23_30": {
+      "60": 250000,
+      "90": 300000,
+      "120": 400000
+    },
+    "after_23_30": {
+      "60": 300000,
+      "90": 400000,
+      "120": 500000
+    },
+    "addons": {
+      "cao_gio_or_giac_hoi": 25000,
+      "ve_thai": 50000
+    }
+  },
+  "service_prices": [
+    {
+      "mode": "random_ktv",
+      "label": "Không chọn KTV (KTV ngẫu nhiên)",
+      "before_23_30": {
+        "60": 449000,
+        "90": 549000,
+        "120": 649000
+      },
+      "after_23_30": {
+        "60": 499000,
+        "90": 599000,
+        "120": 699000
+      },
+      "addons": {
+        "cao_gio_or_giac_hoi": 50000
+      }
+    },
+    {
+      "mode": "choose_ktv",
+      "label": "Chọn KTV",
+      "before_23_30": {
+        "60": 499000,
+        "90": 599000,
+        "120": 699000
+      },
+      "after_23_30": {
+        "60": 549000,
+        "90": 649000,
+        "120": 749000
+      },
+      "addons": {
+        "cao_gio_or_giac_hoi": 50000
+      }
+    }
+  ],
+  "notes": {
+    "ve_thai_price_for_customer": "Không thấy bạn cung cấp giá 'Vé Thái' cho khách (chỉ có phần tính công KTV), nên JSON chưa đưa vào phần service_prices."
+  }
+}
