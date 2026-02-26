@@ -81,6 +81,47 @@
       "description": "KTV đến tận nơi đúng hẹn, mang đầy đủ dụng cụ. Bạn chỉ cần nằm xuống và tận hưởng"
     }
   },
+  "reviews": {
+    "title": "Khách hàng nói gì về chúng tôi",
+    "items": [
+      {
+        "name": "Anh T.",
+        "text": "KTV đến đúng giờ, massage rất chuyên nghiệp. Tôi đặt body massage 90 phút, cảm giác người nhẹ hẳn, sẽ đặt lại."
+      },
+      {
+        "name": "Chị H.",
+        "text": "Dịch vụ kín đáo, tôi rất hài lòng. Massage vai gáy giúp tôi đỡ đau đầu sau nhiều ngày làm việc."
+      },
+      {
+        "name": "Chị L.",
+        "text": "Tinh dầu thơm, KTV thao tác đúng kỹ thuật. Đã giới thiệu cho đồng nghiệp và sẽ ủng hộ lâu dài."
+      },
+      {
+        "name": "Anh K.",
+        "text": "Đặt lịch qua Zalo rất nhanh, xác nhận trong vài phút. KTV đến đúng giờ, không làm phiền, chất lượng tốt."
+      },
+      {
+        "name": "Chị M.",
+        "text": "Shiatsu Nhật Bản đúng bài, người khỏe hẳn sau vài ngày. Dịch vụ tại nhà tiện lắm, không cần đi đâu xa."
+      },
+      {
+        "name": "Anh P.",
+        "text": "Massage Thụy Điển giúp tôi ngủ ngon hơn rất nhiều. KTV nhẹ nhàng, đúng áp lực mình cần."
+      },
+      {
+        "name": "Chị N.",
+        "text": "Lần đầu dùng dịch vụ massage tại nhà, ấn tượng từ khâu đặt lịch đến khi hoàn thành. Sẽ ủng hộ dài lâu."
+      },
+      {
+        "name": "Anh D.",
+        "text": "Vừa đặt body massage 120 phút, xứng đáng từng đồng. Phòng mình nhỏ nhưng KTV vẫn thao tác thoải mái."
+      },
+      {
+        "name": "Chị V.",
+        "text": "Đúng giờ, lịch sự, kỹ thuật tốt. Mình hay đau lưng nên đặt massage vai gáy định kỳ, cải thiện rõ rệt."
+      }
+    ]
+  },
   "faq": {
     "title": "Câu hỏi thường gặp",
     "q1": {

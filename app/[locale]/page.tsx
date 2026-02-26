@@ -4,6 +4,7 @@ import Hero from '@/components/Hero';
 import Services from '@/components/Services';
 import Benefits from '@/components/Benefits';
 import Steps from '@/components/Steps';
+import Reviews from '@/components/Reviews';
 import FAQ from '@/components/FAQ';
 import Footer from '@/components/Footer';
 import config from '@/global-config';
@@ -75,6 +76,7 @@ export default async function HomePage({
         <Services translations={translations} locale={locale} />
         <Benefits translations={translations} />
         <Steps translations={translations} />
+        <Reviews translations={translations} />
         <FAQ translations={translations} />
       </main>
       <Footer translations={translations} locale={locale} />

@@ -81,6 +81,47 @@
       "description": "Your therapist arrives on schedule with full equipment. Just lie down and enjoy"
     }
   },
+  "reviews": {
+    "title": "What Our Customers Say",
+    "items": [
+      {
+        "name": "Mr. T.",
+        "text": "Therapist was on time and very professional. I booked a 90-minute body massage and felt much lighter afterward. Will book again."
+      },
+      {
+        "name": "Ms. H.",
+        "text": "Discreet service, very satisfied. The neck and shoulder massage helped my headaches after long work days."
+      },
+      {
+        "name": "Ms. L.",
+        "text": "Lovely oils and proper technique. I recommended the service to colleagues and will keep coming back."
+      },
+      {
+        "name": "Mr. K.",
+        "text": "Booking via Zalo was quick, confirmed in minutes. Therapist arrived on time, no hassle, good quality."
+      },
+      {
+        "name": "Ms. M.",
+        "text": "Japanese Shiatsu was spot on, I felt much better after a few days. At-home service is so convenient."
+      },
+      {
+        "name": "Mr. P.",
+        "text": "Swedish massage helped me sleep much better. Therapist was gentle and used just the right pressure."
+      },
+      {
+        "name": "Ms. N.",
+        "text": "First time trying at-home massage and impressed from booking to finish. Will keep coming back."
+      },
+      {
+        "name": "Mr. D.",
+        "text": "Booked a 120-minute body massage, worth every penny. Small room but the therapist worked comfortably."
+      },
+      {
+        "name": "Ms. V.",
+        "text": "On time, polite, great technique. I get neck and shoulder massage regularly for my back pain, big improvement."
+      }
+    ]
+  },
   "faq": {
     "title": "Frequently Asked Questions",
     "q1": {

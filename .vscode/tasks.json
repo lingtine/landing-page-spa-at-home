@@ -1,0 +1,21 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "git: auto push",
+      "type": "shell",
+      "command": "git add -A && (git diff --staged --quiet || (git commit -m \"update: $(date '+%Y-%m-%d %H:%M')\" && git push))",
+      "problemMatcher": [],
+      "presentation": { "reveal": "always", "panel": "shared" }
+    },
+    {
+      "label": "git: add-commit-push",
+      "type": "shell",
+      "command": "git add -A && git commit -m \"${input:msg}\" && git push",
+      "problemMatcher": []
+    }
+  ],
+  "inputs": [
+    { "id": "msg", "type": "promptString", "description": "Commit message", "default": "update" }
+  ]
+}
