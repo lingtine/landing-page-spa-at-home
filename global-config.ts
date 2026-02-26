@@ -19,7 +19,7 @@ const config: Config = {
     logoWhite: "/images/logo-white.png",
     logoBlack: "/images/logo-black.png",
     zalo: "https://zalo.me/0345727534",
-    facebook: "https://facebook.com/idmassage",
+    facebook: "https://www.facebook.com/ikumassage/",
 };
 
 

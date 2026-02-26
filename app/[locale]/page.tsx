@@ -25,19 +25,19 @@ export async function generateMetadata({
   const translations = await getTranslations(locale);
   
   const titles: Record<Locale, string> = {
-    vi: `${config.nameWebsite} - Dịch vụ Massage chuyên nghiệp`,
-    en: `${config.nameWebsite} - Professional Massage Service`,
-    ko: `${config.nameWebsite} - 전문 마사지 서비스`,
+    vi: `${config.nameWebsite} - Massage Tại Nhà TP.HCM`,
+    en: `${config.nameWebsite} - At-Home Massage Ho Chi Minh City`,
+    ko: `${config.nameWebsite} - 호치민 방문 마사지 서비스`,
   };
   const descriptions: Record<Locale, string> = {
-    vi: 'Dịch vụ massage chuyên nghiệp tại tiệm. Kỹ thuật chuyên sâu, tinh dầu thiên nhiên cao cấp. Đặt lịch nhanh qua Zalo.',
-    en: 'Professional massage service. Book quickly via Zalo. Professional therapists, on-time service.',
-    ko: '전문 마사지 서비스. 자로로 빠른 예약. 전문 테라피스트, 정시 방문.',
+    vi: 'Dịch vụ massage tại nhà TP.HCM. Body Massage, Shiatsu Nhật Bản, Massage Thụy Điển, Massage Vai Gáy. KTV đến tận nơi, an toàn, kín đáo. Đặt lịch qua Zalo.',
+    en: 'At-home massage service in Ho Chi Minh City. Body Massage, Japanese Shiatsu, Swedish Massage, Neck & Shoulder. Therapist comes to you, safe and discreet. Book via Zalo.',
+    ko: '호치민 방문 마사지 서비스. 바디 마사지, 일본 지압(시아츠), 스웨디시 마사지, 어깨·목 마사지. 테라피스트가 정시에 방문. 자로로 예약.',
   };
   const keywords: Record<Locale, string> = {
-    vi: 'massage chuyên nghiệp, massage Huế, đặt lịch massage',
-    en: 'professional massage, Hue massage, book massage',
-    ko: '전문 마사지, 후에 마사지, 마사지 예약',
+    vi: 'massage tại nhà, massage tại nhà TPHCM, massage tại nhà Hồ Chí Minh, body massage, shiatsu, massage thụy điển, massage vai gáy, đặt massage tại nhà',
+    en: 'at-home massage, home massage Ho Chi Minh City, body massage, shiatsu, swedish massage, neck massage, book massage at home',
+    ko: '방문 마사지, 호치민 방문 마사지, 바디 마사지, 시아츠, 스웨디시 마사지, 어깨 목 마사지, 집에서 마사지',
   };
   const ogLocales: Record<Locale, string> = {
     vi: 'vi_VN',
@@ -85,7 +85,7 @@ export default async function HomePage({
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             '@context': 'https://schema.org',
-            '@type': 'LocalBusiness',
+            '@type': 'HealthAndBeautyBusiness',
             name: config.nameWebsite,
             description: translations.hero.subheadline,
             telephone: config.phoneNumber.startsWith('0') ? `+84${config.phoneNumber.slice(1)}` : config.phoneNumber,
@@ -93,12 +93,23 @@ export default async function HomePage({
             address: {
               '@type': 'PostalAddress',
               streetAddress: config.address,
+              addressLocality: 'Thành phố Hồ Chí Minh',
               addressCountry: 'VN',
             },
             url: undefined,
             priceRange: '$$',
-            areaServed: { '@type': 'City', name: 'Hue' },
-            serviceType: 'Massage Service',
+            areaServed: { '@type': 'City', name: 'Ho Chi Minh City' },
+            serviceType: 'At-Home Massage Service',
+            hasOfferCatalog: {
+              '@type': 'OfferCatalog',
+              name: 'Dịch vụ Massage Tại Nhà',
+              itemListElement: [
+                { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Body Massage' } },
+                { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Massage Vai Gáy' } },
+                { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Shiatsu Nhật Bản' } },
+                { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Massage Thụy Điển' } },
+              ],
+            },
           }),
         }}
       />

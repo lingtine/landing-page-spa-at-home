@@ -7,80 +7,62 @@
     "chatZalo": "Chat Zalo"
   },
   "hero": {
-    "headline": "Massage chuyên nghiệp — thư giãn đẳng cấp",
-    "subheadline": "Kỹ thuật massage chuyên sâu, tinh dầu thiên nhiên cao cấp — trải nghiệm phục hồi thể chất và tinh thần toàn diện.",
+    "headline": "Massage tại nhà TP.HCM — an toàn, kín đáo & chu đáo",
+    "subheadline": "Body Massage, Shiatsu Nhật Bản, Massage Thụy Điển... KTV đến tận nơi đúng giờ. Đặt lịch chỉ với một tin nhắn Zalo.",
     "ctaPrimary": "Đặt lịch qua Zalo",
     "ctaSecondary": "Gọi ngay"
   },
   "services": {
     "title": "Bảng giá",
-    "atHome": {
-      "name": "Massage tại nhà",
-      "description": "Thư giãn ngay tại không gian riêng của bạn với dịch vụ massage chuyên nghiệp",
-      "details": "Dịch vụ massage chuyên nghiệp với kỹ thuật viên được đào tạo bài bản, tinh dầu thiên nhiên cao cấp và không gian tiệm sang trọng, giúp bạn thư giãn và phục hồi thể chất toàn diện.",
-      "duration": "60-120 phút",
-      "features": ["Không gian riêng tư", "Tiết kiệm thời gian", "Dụng cụ đầy đủ", "KTV chuyên nghiệp"],
-      "image": "/images/massage-at-home.jpg",
-      "cta": "Đặt qua Zalo"
-    },
-    "atHotel": {
-      "name": "Massage tại khách sạn",
-      "description": "Phục vụ tại khách sạn, resort của bạn với tiêu chuẩn cao nhất",
-      "details": "Dịch vụ massage tại khách sạn dành cho khách du lịch và công tác. Chúng tôi phục vụ tại các khách sạn, resort với tiêu chuẩn 5 sao, giúp bạn thư giãn sau những chuyến đi dài hoặc ngày làm việc căng thẳng.",
-      "duration": "60-120 phút",
-      "features": ["Tiêu chuẩn cao", "Phục vụ 24/7", "Đặt lịch linh hoạt", "Chuyên nghiệp"],
-      "image": "/images/massage-at-hotel.jpg",
-      "cta": "Đặt qua Zalo"
-    },
     "body": {
-      "name": "Massage Body",
-      "description": "Massage toàn thân giúp giảm căng thẳng, đau nhức cơ bắp",
-      "details": "Massage body toàn thân sử dụng các kỹ thuật chuyên sâu để giải tỏa căng thẳng, đau nhức cơ bắp và cải thiện tuần hoàn máu. Phù hợp cho những người làm việc văn phòng, vận động viên hoặc người thường xuyên bị đau lưng, cổ vai gáy.",
-      "duration": "90-120 phút",
-      "features": ["Giảm đau nhức", "Cải thiện tuần hoàn", "Thư giãn sâu", "Tăng cường năng lượng"],
+      "name": "Body Massage",
+      "description": "Giảm đau nhức, tăng tuần hoàn máu toàn thân",
+      "details": "Kỹ thuật massage toàn thân chuyên sâu giúp giải tỏa căng cơ, giảm đau nhức và cải thiện tuần hoàn máu. KTV được đào tạo bài bản sẽ đến tận nơi, mang đầy đủ dụng cụ và tinh dầu thiên nhiên cao cấp.",
+      "duration": "60-120 phút",
+      "features": ["Giảm đau nhức", "Tăng tuần hoàn máu", "KTV đến tận nơi", "Tinh dầu tự nhiên"],
       "image": "/images/massage-body.jpg",
       "cta": "Đặt qua Zalo"
     },
     "neck": {
-      "name": "Massage Cổ - Vai - Gáy",
-      "description": "Giảm đau nhức vùng cổ, vai, gáy do làm việc lâu",
-      "details": "Massage chuyên sâu vùng cổ, vai, gáy giúp giải tỏa căng thẳng và đau nhức do ngồi làm việc lâu, sử dụng máy tính nhiều. Kỹ thuật này tập trung vào các điểm đau, giúp cải thiện tư thế và giảm đau đầu do căng cơ.",
+      "name": "Massage Vai, Gáy",
+      "description": "Giảm căng cơ vai gáy do ngồi làm việc nhiều",
+      "details": "Liệu trình massage chuyên sâu vùng vai, gáy và cổ, tập trung giải phóng các nút thắt cơ do ngồi máy tính lâu. Giúp cải thiện tư thế, giảm đau đầu và trả lại sự linh hoạt cho vùng cổ vai.",
       "duration": "60 phút",
-      "features": ["Giảm đau đầu", "Cải thiện tư thế", "Giảm căng cơ", "Tập trung vùng đau"],
+      "features": ["Giảm căng cơ vai gáy", "Cải thiện tư thế", "Giảm đau đầu", "KTV đến tận nơi"],
       "image": "/images/massage-neck.jpg",
       "cta": "Đặt qua Zalo"
     },
-    "foot": {
-      "name": "Massage Chân",
-      "description": "Thư giãn đôi chân mệt mỏi sau một ngày dài",
-      "details": "Massage chân giúp thư giãn đôi chân mệt mỏi, giảm phù nề và cải thiện tuần hoàn máu. Đặc biệt hiệu quả cho những người phải đứng hoặc đi lại nhiều trong ngày. Kỹ thuật massage chân còn giúp kích thích các huyệt đạo, mang lại cảm giác thư thái toàn thân.",
-      "duration": "60 phút",
-      "features": ["Giảm mệt mỏi", "Giảm phù nề", "Kích thích huyệt đạo", "Thư giãn toàn thân"],
-      "image": "/images/massage-foot.jpg",
+    "shiatsu": {
+      "name": "Shiatsu Nhật Bản",
+      "description": "Bấm huyệt khơi thông dòng năng lượng, phục hồi cơ thể",
+      "details": "Kỹ thuật bấm huyệt Shiatsu truyền thống Nhật Bản tác động trực tiếp vào các huyệt đạo trên cơ thể, khơi thông dòng năng lượng, giảm mệt mỏi mãn tính và tăng cường sức đề kháng tự nhiên.",
+      "duration": "60-90 phút",
+      "features": ["Bấm huyệt chuyên sâu", "Khơi thông năng lượng", "Giảm mệt mỏi mãn tính", "KTV đến tận nơi"],
+      "image": "/images/massage-shiatsu.jpg",
       "cta": "Đặt qua Zalo"
     },
-    "hotStone": {
-      "name": "Massage Đá Nóng",
-      "description": "Liệu pháp đá nóng giúp thư giãn sâu và giảm đau nhức",
-      "details": "Massage đá nóng là liệu pháp spa cao cấp sử dụng đá núi lửa được làm nóng để massage cơ thể. Nhiệt độ từ đá giúp thư giãn cơ bắp sâu, giảm đau nhức, cải thiện tuần hoàn máu và mang lại cảm giác thư thái tuyệt vời. Phù hợp cho những người bị đau cơ mãn tính hoặc căng thẳng cao độ.",
-      "duration": "90 phút",
-      "features": ["Thư giãn sâu", "Giảm đau mãn tính", "Cải thiện tuần hoàn", "Liệu pháp cao cấp"],
-      "image": "/images/massage-hot-stone.jpg",
+    "swedish": {
+      "name": "Massage Thụy Điển",
+      "description": "Giúp ngủ sâu, cân bằng tinh thần và thư giãn toàn diện",
+      "details": "Massage Thụy Điển sử dụng các động tác vuốt nhẹ nhàng, nhịp nhàng giúp hệ thần kinh thư giãn sâu, cải thiện chất lượng giấc ngủ và mang lại trạng thái cân bằng tinh thần tuyệt vời.",
+      "duration": "60-120 phút",
+      "features": ["Cải thiện giấc ngủ", "Cân bằng tinh thần", "Thư giãn toàn diện", "KTV đến tận nơi"],
+      "image": "/images/massage-swedish.jpg",
       "cta": "Đặt qua Zalo"
     }
   },
   "benefits": {
     "title": "Tại sao chọn {name}?",
     "professional": {
-      "title": "Kỹ thuật massage chuyên sâu",
-      "description": "Đội ngũ KTV được đào tạo bài bản, nắm vững các kỹ thuật massage trị liệu giúp giảm đau nhức, thư giãn cơ bắp hiệu quả"
+      "title": "KTV đến tận nơi — đúng giờ, chuyên nghiệp",
+      "description": "Kỹ thuật viên được đào tạo bài bản, có chứng chỉ chuyên môn, đến đúng giờ hẹn với đầy đủ dụng cụ"
     },
     "punctual": {
-      "title": "Thư giãn sâu, phục hồi nhanh",
-      "description": "Mỗi liệu trình được thực hiện tỉ mỉ, tập trung vào vùng cơ căng thẳng để mang lại cảm giác thư thái toàn diện"
+      "title": "An toàn, kín đáo & riêng tư",
+      "description": "Dịch vụ hoàn toàn kín đáo, không chia sẻ thông tin khách hàng, phục vụ ngay tại không gian riêng của bạn"
     },
     "private": {
-      "title": "Dụng cụ & tinh dầu chất lượng cao",
+      "title": "Tinh dầu & dụng cụ chất lượng cao",
       "description": "Sử dụng tinh dầu thiên nhiên cao cấp và dụng cụ massage chuyên nghiệp, đảm bảo vệ sinh và hiệu quả tối ưu"
     }
   },
@@ -92,18 +74,18 @@
     },
     "step2": {
       "title": "Nhắn tin Zalo đặt lịch",
-      "description": "Gửi thông tin gói dịch vụ và thời gian mong muốn qua Zalo, xác nhận trong vài phút"
+      "description": "Gửi địa chỉ, gói dịch vụ và thời gian mong muốn qua Zalo — xác nhận trong vài phút"
     },
     "step3": {
-      "title": "Đến & tận hưởng",
-      "description": "Có mặt đúng giờ hẹn, trải nghiệm dịch vụ massage chuyên nghiệp"
+      "title": "KTV đến đúng giờ — thư giãn tại nhà",
+      "description": "KTV đến tận nơi đúng hẹn, mang đầy đủ dụng cụ. Bạn chỉ cần nằm xuống và tận hưởng"
     }
   },
   "faq": {
     "title": "Câu hỏi thường gặp",
     "q1": {
-      "question": "Các kỹ thuật viên có chứng chỉ không?",
-      "answer": "Có. Tất cả KTV đều được đào tạo bài bản, có chứng chỉ chuyên môn và nhiều năm kinh nghiệm trong lĩnh vực massage trị liệu."
+      "question": "Phục vụ khu vực nào tại TP.HCM?",
+      "answer": "Chúng tôi phục vụ toàn bộ TP.HCM và các khu vực lân cận. Vui lòng nhắn Zalo để xác nhận địa chỉ cụ thể của bạn."
     },
     "q2": {
       "question": "Thời gian phục vụ là khi nào?",
@@ -114,8 +96,8 @@
       "answer": "Có, bạn có thể đổi hoặc hủy lịch hẹn bằng cách liên hệ qua Zalo hoặc hotline trước ít nhất 2 giờ."
     },
     "q4": {
-      "question": "Sử dụng loại tinh dầu nào?",
-      "answer": "Chúng tôi sử dụng tinh dầu thiên nhiên cao cấp, an toàn cho da, giúp thư giãn cơ bắp và phục hồi năng lượng hiệu quả."
+      "question": "Tôi cần chuẩn bị gì trước khi đặt lịch?",
+      "answer": "Bạn chỉ cần có mặt tại nhà và một khu vực nằm thoải mái. KTV sẽ mang đầy đủ dụng cụ, tinh dầu và khăn phục vụ."
     },
     "q5": {
       "question": "Chính sách bảo mật như thế nào?",
@@ -124,7 +106,7 @@
   },
   "footer": {
     "titleAbout": "Về {name}",
-    "tagline": "Dịch vụ massage chuyên nghiệp. Kỹ thuật chuyên sâu — trải nghiệm thư giãn đẳng cấp.",
+    "tagline": "Massage tại nhà TP.HCM — an toàn, kín đáo, chuyên nghiệp. KTV đến tận nơi đúng giờ.",
     "titleServices": "Khám phá",
     "titleContact": "Liên hệ đặt lịch",
     "company": "",

@@ -7,80 +7,62 @@
     "chatZalo": "Chat Zalo"
   },
   "hero": {
-    "headline": "Professional Massage — Premium Relaxation",
-    "subheadline": "Expert massage techniques with high-quality natural oils — experience full physical and mental recovery.",
+    "headline": "At-Home Massage in Ho Chi Minh City — Safe, Discreet & Professional",
+    "subheadline": "Body Massage, Japanese Shiatsu, Swedish Massage... Therapist comes to you, on time. Book now with just a Zalo message.",
     "ctaPrimary": "Book via Zalo",
     "ctaSecondary": "Call Now"
   },
   "services": {
     "title": "Pricing",
-    "atHome": {
-      "name": "Home Massage",
-      "description": "Relax in your own private space with professional massage service",
-      "details": "Home massage service brings an excellent relaxation experience right to your familiar space. Our professional therapists will come to your location with full professional equipment, saving you travel time and allowing you to enjoy your private space.",
-      "duration": "60-120 minutes",
-      "features": ["Private space", "Time saving", "Full equipment", "Professional therapist"],
-      "image": "/images/massage-at-home.jpg",
-      "cta": "Book via Zalo"
-    },
-    "atHotel": {
-      "name": "Hotel Massage",
-      "description": "Service at your hotel, resort with the highest standards",
-      "details": "Hotel massage service for tourists and business travelers. We serve at hotels and resorts with 5-star standards, helping you relax after long trips or stressful work days.",
-      "duration": "60-120 minutes",
-      "features": ["High standards", "24/7 service", "Flexible booking", "Professional"],
-      "image": "/images/massage-at-hotel.jpg",
-      "cta": "Book via Zalo"
-    },
     "body": {
       "name": "Body Massage",
-      "description": "Full body massage to relieve stress and muscle pain",
-      "details": "Full body massage uses deep techniques to relieve stress, muscle pain and improve blood circulation. Suitable for office workers, athletes or people who frequently experience back, neck and shoulder pain.",
-      "duration": "90-120 minutes",
-      "features": ["Pain relief", "Improved circulation", "Deep relaxation", "Energy boost"],
+      "description": "Relieve pain and boost blood circulation throughout the body",
+      "details": "Deep full-body massage techniques to release muscle tension, reduce pain and improve circulation. Certified therapists come to your location with all equipment and premium natural oils.",
+      "duration": "60-120 minutes",
+      "features": ["Pain relief", "Improved circulation", "Therapist comes to you", "Natural oils"],
       "image": "/images/massage-body.jpg",
       "cta": "Book via Zalo"
     },
     "neck": {
-      "name": "Neck - Shoulder - Back Massage",
-      "description": "Relieve neck, shoulder, back pain from long work hours",
-      "details": "Deep massage of the neck, shoulder and back area helps relieve tension and pain from prolonged sitting and computer use. This technique focuses on pain points, helping to improve posture and reduce headaches from muscle tension.",
+      "name": "Shoulder & Neck Massage",
+      "description": "Relieve muscle tension in neck and shoulders from prolonged desk work",
+      "details": "Deep massage focused on the neck, shoulder and upper back area to release muscle knots from long hours at a computer. Helps improve posture, reduce headaches and restore flexibility.",
       "duration": "60 minutes",
-      "features": ["Headache relief", "Posture improvement", "Muscle tension relief", "Pain point focus"],
+      "features": ["Neck & shoulder relief", "Posture improvement", "Headache reduction", "Therapist comes to you"],
       "image": "/images/massage-neck.jpg",
       "cta": "Book via Zalo"
     },
-    "foot": {
-      "name": "Foot Massage",
-      "description": "Relax tired feet after a long day",
-      "details": "Foot massage helps relax tired feet, reduce swelling and improve blood circulation. Especially effective for people who have to stand or walk a lot during the day. Foot massage techniques also help stimulate acupressure points, bringing a sense of overall relaxation.",
-      "duration": "60 minutes",
-      "features": ["Fatigue relief", "Swelling reduction", "Acupressure stimulation", "Full body relaxation"],
-      "image": "/images/massage-foot.jpg",
+    "shiatsu": {
+      "name": "Japanese Shiatsu",
+      "description": "Acupressure to unblock energy flow and restore the body",
+      "details": "Traditional Japanese Shiatsu acupressure targets specific pressure points on the body to unblock energy flow, reduce chronic fatigue and strengthen the body's natural immunity.",
+      "duration": "60-90 minutes",
+      "features": ["Deep acupressure", "Energy flow restoration", "Chronic fatigue relief", "Therapist comes to you"],
+      "image": "/images/massage-shiatsu.jpg",
       "cta": "Book via Zalo"
     },
-    "hotStone": {
-      "name": "Hot Stone Massage",
-      "description": "Hot stone therapy for deep relaxation and pain relief",
-      "details": "Hot stone massage is a premium spa therapy using heated volcanic stones to massage the body. The heat from the stones helps deeply relax muscles, relieve pain, improve blood circulation and bring a wonderful sense of relaxation. Suitable for people with chronic muscle pain or high stress levels.",
-      "duration": "90 minutes",
-      "features": ["Deep relaxation", "Chronic pain relief", "Improved circulation", "Premium therapy"],
-      "image": "/images/massage-hot-stone.jpg",
+    "swedish": {
+      "name": "Swedish Massage",
+      "description": "Improve sleep quality, balance the mind and achieve total relaxation",
+      "details": "Swedish massage uses gentle, rhythmic strokes to deeply relax the nervous system, improve sleep quality and bring a wonderful sense of mental balance and well-being.",
+      "duration": "60-120 minutes",
+      "features": ["Better sleep", "Mental balance", "Total relaxation", "Therapist comes to you"],
+      "image": "/images/massage-swedish.jpg",
       "cta": "Book via Zalo"
     }
   },
   "benefits": {
     "title": "Why Choose {name}?",
     "professional": {
-      "title": "Expert Massage Techniques",
-      "description": "Our therapists are trained in deep-tissue and therapeutic massage to effectively relieve muscle tension and pain"
+      "title": "Therapist Comes to You — On Time & Professional",
+      "description": "Certified and trained therapists arrive at your door on schedule with all necessary equipment"
     },
     "punctual": {
-      "title": "Deep Relaxation & Recovery",
-      "description": "Each session is carefully tailored to your tight muscle areas, delivering total-body relief and genuine relaxation"
+      "title": "Safe, Discreet & Private",
+      "description": "Fully confidential service with no sharing of customer information, performed in your own private space"
     },
     "private": {
-      "title": "Premium Oils & Equipment",
+      "title": "Premium Oils & Professional Equipment",
       "description": "We use high-quality natural essential oils and professional massage tools, ensuring hygiene and optimal results"
     }
   },
@@ -92,18 +74,18 @@
     },
     "step2": {
       "title": "Book via Zalo",
-      "description": "Send your chosen package and preferred time via Zalo — confirmed within minutes"
+      "description": "Send your address, package choice and preferred time via Zalo — confirmed within minutes"
     },
     "step3": {
-      "title": "Arrive & Enjoy",
-      "description": "Show up at your scheduled time and enjoy a professional massage experience"
+      "title": "Therapist Arrives On Time — Relax at Home",
+      "description": "Your therapist arrives on schedule with full equipment. Just lie down and enjoy"
     }
   },
   "faq": {
     "title": "Frequently Asked Questions",
     "q1": {
-      "question": "Are the therapists certified?",
-      "answer": "Yes. All therapists are professionally trained, certified, and have years of experience in therapeutic massage."
+      "question": "Which areas in Ho Chi Minh City do you serve?",
+      "answer": "We serve all districts in Ho Chi Minh City and surrounding areas. Please message us on Zalo to confirm your specific address."
     },
     "q2": {
       "question": "What are your service hours?",
@@ -114,8 +96,8 @@
       "answer": "Yes, you can reschedule or cancel by contacting us via Zalo or hotline at least 2 hours in advance."
     },
     "q4": {
-      "question": "What oils do you use?",
-      "answer": "We use premium natural essential oils that are skin-safe and effective for muscle relaxation and energy recovery."
+      "question": "What do I need to prepare at home?",
+      "answer": "Just be home and have a comfortable space to lie down. Our therapist will bring all tools, oils and towels needed."
     },
     "q5": {
       "question": "What is your privacy policy?",
@@ -124,7 +106,7 @@
   },
   "footer": {
     "titleAbout": "About {name}",
-    "tagline": "Professional massage service. Expert techniques — a premium relaxation experience.",
+    "tagline": "At-home massage in Ho Chi Minh City — safe, discreet and professional. Therapist comes to you on time.",
     "titleServices": "Explore",
     "titleContact": "Book Now",
     "company": "",
