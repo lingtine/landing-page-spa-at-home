@@ -1,6 +1,7 @@
 import { getTranslations, getLocaleFromPath, locales, type Locale } from '@/lib/i18n';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
+import PremiumIntro from '@/components/PremiumIntro';
 import Services from '@/components/Services';
 import Benefits from '@/components/Benefits';
 import Steps from '@/components/Steps';
@@ -24,7 +25,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const locale = params.locale as Locale;
   const translations = await getTranslations(locale);
-  
+
   const titles: Record<Locale, string> = {
     vi: `${config.nameWebsite} - Massage Tại Nhà TP.HCM`,
     en: `${config.nameWebsite} - At-Home Massage Ho Chi Minh City`,
@@ -73,14 +74,17 @@ export default async function HomePage({
       <Header translations={translations} currentLocale={locale} />
       <main className="flex-grow">
         <Hero translations={translations} locale={locale} />
+
         <Services translations={translations} locale={locale} />
         <Benefits translations={translations} />
         <Steps translations={translations} />
+        <PremiumIntro translations={translations} locale={locale} />
         <Reviews translations={translations} />
+
         <FAQ translations={translations} />
       </main>
       <Footer translations={translations} locale={locale} />
-      
+
       {/* Schema.org JSON-LD */}
       <script
         type="application/ld+json"

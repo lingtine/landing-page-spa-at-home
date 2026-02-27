@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        serif: ['var(--font-serif)', 'Georgia', 'serif'],
+      },
       colors: {
         primary: {
           500: '#88663C', // Copper: icon, line, border

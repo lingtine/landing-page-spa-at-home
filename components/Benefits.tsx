@@ -1,6 +1,6 @@
 'use client';
 
-import config from '@/global-config';
+import Image from 'next/image';
 import { useInView } from '@/lib/useInView';
 
 interface BenefitsProps {
@@ -8,50 +8,85 @@ interface BenefitsProps {
 }
 
 export default function Benefits({ translations }: BenefitsProps) {
-  const title = (translations.benefits.title || '').replace(/\{name\}/g, config.nameWebsite);
   const { ref: sectionRef, isInView } = useInView<HTMLDivElement>();
-
-  const benefits = [
-    translations.benefits.professional,
-    translations.benefits.punctual,
-    translations.benefits.private,
-  ];
-
-  const icons = ['🤲', '✨', '🌿'];
+  const b = translations?.benefits ?? {};
+  const headline = b.headline ?? '';
+  const subheadline = b.subheadline ?? '';
+  const reasonsTitle = b.reasonsTitle ?? '';
+  const reasons: Array<{ title: string; description: string }> = Array.isArray(b.reasons) ? b.reasons : [];
+  const commitment = b.commitment ?? '';
+  const imageAlt = b.imageAlt ?? 'Why us';
 
   return (
     <section className="py-20 px-4 bg-background overflow-hidden">
       <div className="container mx-auto max-w-6xl" ref={sectionRef}>
-        {/* Title */}
-        <h2
-          className={`text-3xl md:text-4xl font-bold text-center text-text mb-12 ${
-            isInView ? 'animate-fade-up' : 'opacity-0'
-          }`}
-        >
-          {title}
-        </h2>
+        {/* Two columns: image left, content right; stack on mobile */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-start">
+          {/* Left: why_us image */}
+          <div
+            className={`relative w-full aspect-[4/3] md:aspect-[3/4] rounded-xl overflow-hidden bg-card ${
+              isInView ? 'animate-fade-up' : 'opacity-0'
+            }`}
+          >
+            <Image
+              src="/images/why_us.png"
+              alt={imageAlt}
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 50vw"
+              priority={false}
+            />
+          </div>
 
-        {/* Staggered cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-          {benefits.map((benefit: any, index: number) => (
-            <div
-              key={index}
-              className={`group bg-card rounded-xl p-6 shadow-md border border-transparent
-                hover:shadow-2xl hover:-translate-y-2 hover:border-primary-500/30
-                transition-all duration-300 text-center cursor-default
-                ${isInView ? 'animate-fade-up' : 'opacity-0'}`}
-              style={{ animationDelay: `${100 + index * 100}ms` }}
+          {/* Right: headline, subheadline, 6 reasons, commitment */}
+          <div className="flex flex-col gap-6">
+            <h2
+              className={`text-2xl md:text-3xl font-bold text-text ${
+                isInView ? 'animate-fade-up' : 'opacity-0'
+              }`}
+              style={{ animationDelay: '100ms' }}
             >
-              {/* Icon with scale on hover */}
-              <div className="text-4xl mb-4 inline-block group-hover:scale-125 transition-transform duration-300 select-none">
-                {icons[index]}
-              </div>
-              <h3 className="text-xl font-semibold text-text mb-2 group-hover:text-primary-600 transition-colors duration-200">
-                {benefit.title}
-              </h3>
-              <p className="text-text-muted">{benefit.description}</p>
-            </div>
-          ))}
+              {headline}
+            </h2>
+            <p
+              className={`text-text-muted text-base md:text-lg ${
+                isInView ? 'animate-fade-up' : 'opacity-0'
+              }`}
+              style={{ animationDelay: '150ms' }}
+            >
+              {subheadline}
+            </p>
+            <h3
+              className={`text-xl font-semibold text-text mt-2 ${
+                isInView ? 'animate-fade-up' : 'opacity-0'
+              }`}
+              style={{ animationDelay: '200ms' }}
+            >
+              {reasonsTitle}
+            </h3>
+            <ul className="space-y-4">
+              {reasons.map((item: { title: string; description: string }, index: number) => (
+                <li
+                  key={index}
+                  className={`${isInView ? 'animate-fade-up' : 'opacity-0'}`}
+                  style={{ animationDelay: `${250 + index * 80}ms` }}
+                >
+                  <span className="font-semibold text-text">
+                    {index + 1}) {item.title}
+                  </span>
+                  <p className="text-text-muted text-sm mt-1 ml-0 pl-0">{item.description}</p>
+                </li>
+              ))}
+            </ul>
+            <p
+              className={`text-sm text-text-muted border-l-2 border-primary-500/50 pl-4 mt-2 ${
+                isInView ? 'animate-fade-up' : 'opacity-0'
+              }`}
+              style={{ animationDelay: `${250 + reasons.length * 80}ms` }}
+            >
+              {commitment}
+            </p>
+          </div>
         </div>
       </div>
     </section>

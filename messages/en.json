@@ -12,6 +12,12 @@
     "ctaPrimary": "Book via Zalo",
     "ctaSecondary": "Call Now"
   },
+  "premiumIntro": {
+    "headline": "Spa-standard care\nat your place.",
+    "description": "Experience premium at-home massage in Ho Chi Minh City. Our certified therapists bring the same quality and care you expect from a top spa — with total discretion and convenience.",
+    "ctaBook": "Book an appointment",
+    "imageAlt": "Premium at-home spa experience"
+  },
   "services": {
     "title": "Pricing",
     "body": {
@@ -52,19 +58,19 @@
     }
   },
   "benefits": {
-    "title": "Why Choose {name}?",
-    "professional": {
-      "title": "Therapist Comes to You — On Time & Professional",
-      "description": "Certified and trained therapists arrive at your door on schedule with all necessary equipment"
-    },
-    "punctual": {
-      "title": "Safe, Discreet & Private",
-      "description": "Fully confidential service with no sharing of customer information, performed in your own private space"
-    },
-    "private": {
-      "title": "Premium Oils & Professional Equipment",
-      "description": "We use high-quality natural essential oils and professional massage tools, ensuring hygiene and optimal results"
-    }
+    "headline": "Spa-standard at-home massage — fast, safe, transparent.",
+    "subheadline": "Whether at home, apartment or hotel in Ho Chi Minh City, Iku Massage delivers the right treatment — on time — at the right price.",
+    "reasonsTitle": "6 reasons customers choose Iku Massage",
+    "reasons": [
+      { "title": "Vetted & verified therapists", "description": "Trained technicians, professional conduct, respectful of customers." },
+      { "title": "Book in 30 seconds", "description": "Choose service — choose time — send address. Confirmed via Zalo/Hotline/Booking." },
+      { "title": "Quick arrival across Ho Chi Minh City", "description": "Optimized by area so the therapist arrives on time (by district and time slot)." },
+      { "title": "Transparent pricing, no hidden fees", "description": "Clear pricing by duration and time slot. No hidden charges, no upselling." },
+      { "title": "Clean, hygienic equipment", "description": "Oils, towels and tools prepared neatly and kept clean for at-home service." },
+      { "title": "Support before & after your session", "description": "Reschedule, choose a treatment, or give feedback — support team responds quickly." }
+    ],
+    "commitment": "Civil commitment: Iku Massage provides only professional therapeutic and relaxation services. We decline any inappropriate requests.",
+    "imageAlt": "Why choose Iku Massage"
   },
   "steps": {
     "title": "Booking Process",

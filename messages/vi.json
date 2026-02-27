@@ -12,6 +12,12 @@
     "ctaPrimary": "Đặt lịch qua Zalo",
     "ctaSecondary": "Gọi ngay"
   },
+  "premiumIntro": {
+    "headline": "Chuẩn spa\nngay tại không gian của bạn.",
+    "description": "Trải nghiệm massage tại nhà cao cấp tại TP.HCM. KTV được chứng nhận mang đến chất lượng và sự chăm sóc như spa hàng đầu — kín đáo và tiện lợi.",
+    "ctaBook": "Đặt lịch hẹn",
+    "imageAlt": "Trải nghiệm spa tại nhà cao cấp"
+  },
   "services": {
     "title": "Bảng giá",
     "body": {
@@ -52,19 +58,19 @@
     }
   },
   "benefits": {
-    "title": "Tại sao chọn {name}?",
-    "professional": {
-      "title": "KTV đến tận nơi — đúng giờ, chuyên nghiệp",
-      "description": "Kỹ thuật viên được đào tạo bài bản, có chứng chỉ chuyên môn, đến đúng giờ hẹn với đầy đủ dụng cụ"
-    },
-    "punctual": {
-      "title": "An toàn, kín đáo & riêng tư",
-      "description": "Dịch vụ hoàn toàn kín đáo, không chia sẻ thông tin khách hàng, phục vụ ngay tại không gian riêng của bạn"
-    },
-    "private": {
-      "title": "Tinh dầu & dụng cụ chất lượng cao",
-      "description": "Sử dụng tinh dầu thiên nhiên cao cấp và dụng cụ massage chuyên nghiệp, đảm bảo vệ sinh và hiệu quả tối ưu"
-    }
+    "headline": "Massage tận nơi chuẩn spa – nhanh, an toàn, minh bạch.",
+    "subheadline": "Dù bạn ở nhà, căn hộ hay khách sạn tại TP.HCM, Iku Massage mang đến trải nghiệm thư giãn đúng liệu trình – đúng giờ – đúng giá.",
+    "reasonsTitle": "6 lý do khách hàng chọn Iku Massage",
+    "reasons": [
+      { "title": "KTV được tuyển chọn & xác minh", "description": "Kỹ thuật viên được đào tạo bài bản, tác phong chuyên nghiệp, tôn trọng khách hàng." },
+      { "title": "Đặt lịch nhanh trong 30 giây", "description": "Chọn dịch vụ – chọn giờ – gửi địa chỉ. Xác nhận ngay qua Zalo/Hotline/Booking." },
+      { "title": "Có mặt nhanh tại TP.HCM", "description": "Tối ưu theo khu vực để KTV đến đúng hẹn (tuỳ quận, khung giờ)." },
+      { "title": "Giá minh bạch, không phát sinh", "description": "Bảng giá rõ ràng theo thời lượng và khung giờ. Không phụ phí ẩn, không chèo kéo." },
+      { "title": "Dụng cụ sạch, chuẩn vệ sinh", "description": "Tinh dầu/khăn/dụng cụ được chuẩn bị gọn gàng, đảm bảo sạch sẽ khi phục vụ tận nơi." },
+      { "title": "CSKH hỗ trợ trước & sau buổi massage", "description": "Cần đổi giờ, tư vấn chọn liệu trình, phản hồi chất lượng—đội ngũ hỗ trợ tiếp nhận nhanh." }
+    ],
+    "commitment": "Cam kết văn minh: Iku Massage chỉ cung cấp dịch vụ trị liệu – thư giãn chuyên nghiệp. Từ chối mọi yêu cầu không phù hợp.",
+    "imageAlt": "Tại sao chọn Iku Massage"
   },
   "steps": {
     "title": "Quy trình đặt lịch",
