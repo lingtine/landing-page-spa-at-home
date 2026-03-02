@@ -20,6 +20,16 @@
   },
   "services": {
     "title": "Pricing",
+    "pricingSubtitle": "Rates apply to massage services",
+    "duration": "Duration",
+    "randomKTV": "Random therapist",
+    "chooseKTV": "Choose therapist",
+    "before2330": "Before 11:30 PM",
+    "after2330": "After 11:30 PM",
+    "minutesUnit": "min",
+    "noteLateBooking": "Rates after 11:30 PM apply to late-night bookings.",
+    "addonCaoGioGiacHoi": "Cupping / Scraping add-on",
+    "ctaBookZalo": "Book via Zalo",
     "body": {
       "name": "Body Massage",
       "description": "Relieve pain and boost blood circulation throughout the body",
@@ -149,6 +159,84 @@
     "q5": {
       "question": "What is your privacy policy?",
       "answer": "We are fully committed to protecting customer information and will never share it with third parties."
+    }
+  },
+  "featuredServices": {
+    "title": "Featured Services",
+    "subtitle": "Choose a treatment that fits your goals: relaxation — pain relief — energy recovery.",
+    "breadcrumbHome": "Home",
+    "breadcrumbServices": "Services",
+    "sectionOverview": "Overview",
+    "sectionBenefits": "Key benefits",
+    "sectionSuitableFor": "Suitable for",
+    "sectionProcedure": "At-home procedure (summary)",
+    "sectionNotes": "Quick notes",
+    "ctaBook": "Book now",
+    "backToServices": "Back to services",
+    "tagIntensity": "Intensity",
+    "tagGoal": "Goal",
+    "viewDetail": "View details",
+    "services": {
+      "massage-thai": {
+        "name": "Thai Massage",
+        "description": "Stretching, acupressure and release of full-body tension.",
+        "bullets": ["Relief for neck, shoulder, back and hip tension", "Improved muscle and joint flexibility", "Ideal for desk workers and low activity"],
+        "tagIntensity": "Strong",
+        "tagGoal": "Muscle release",
+        "detail": {
+          "overview": "Thai massage combines stretching, acupressure and therapeutic release of muscle tension. Ideal when you feel stiff from sitting too long, low activity or that \"locked up\" feeling after a long day.",
+          "benefits": ["Relief from stiff neck, shoulders, back and hips", "Better muscle and joint flexibility and posture", "Feeling lighter and more alert after the session"],
+          "suitableFor": ["Office workers who sit a lot and move little", "People with back or joint pain who need deep release", "Those who like strong pressure (can be adjusted)"],
+          "procedure": "Light warm-up → acupressure by area → stretching arms/legs/back → cool-down and aftercare tips.",
+          "notes": "Not recommended during acute injury, severe sprain, or unexplained pain. Consult first if unsure.",
+          "ctaText": "Want proper deep muscle release? Choose Thai Massage and note any sore areas so the therapist can adjust pressure."
+        }
+      },
+      "massage-aroma": {
+        "name": "Aromatherapy Massage",
+        "description": "Deep relaxation with essential oils, gently bringing the body to a calm state.",
+        "bullets": ["Reduce stress and improve sleep", "Gentle muscle relaxation", "Scent helps balance the mind"],
+        "tagIntensity": "Light–Medium",
+        "tagGoal": "Relaxation",
+        "detail": {
+          "overview": "Aromatherapy massage is a deep relaxation treatment with essential oils, using light to medium pressure to bring the body into a calm state, improve sleep and reduce stress.",
+          "benefits": ["Relax the nervous system and ease tension", "Better sleep and less mental fatigue", "Gentle softening of muscles for comfort"],
+          "suitableFor": ["People under stress, poor sleep, headaches, heavy workload", "Those who prefer gentle massage without strong pressure", "Anyone needing to \"recharge\" after a long day"],
+          "procedure": "Choose your scent → relaxing strokes with breath rhythm → focus on neck, shoulders, back → finish with light pressure points and hydration tips.",
+          "notes": "If you have scent allergies or sensitive skin, tell us in advance so we can switch oils or use a neutral carrier.",
+          "ctaText": "Need to relax and sleep better tonight? Choose Aromatherapy and pick a scent you like (light, warm or soothing)."
+        }
+      },
+      "massage-da-nong": {
+        "name": "Hot Stone Massage",
+        "description": "Warm stones relax muscles quickly and ease stiffness and cold tension.",
+        "bullets": ["Warm muscles and reduce tightness", "Support circulation and deep relaxation", "Ideal for long-term back and shoulder fatigue"],
+        "tagIntensity": "Medium",
+        "tagGoal": "Release tension",
+        "detail": {
+          "overview": "Hot stone massage uses warmth from stones to soften muscles quickly, support circulation and ease deep tension. The warmth is very satisfying for people who often feel cold or have long-standing back fatigue.",
+          "benefits": ["Warm muscles, reduce stiffness and soreness", "Deep relaxation and quick release", "Support circulation and reduce heaviness"],
+          "suitableFor": ["People with long-standing shoulder, neck or back pain", "Those with cold hands and feet or prone to tight muscles", "Anyone wanting deep relaxation with comfortable pressure"],
+          "procedure": "Warm the area → place stones on tension points → combine with kneading → finish with relaxation and rest tips.",
+          "notes": "Avoid when you have fever, skin inflammation in the treatment area, or are very heat-sensitive. The therapist will adjust temperature to your comfort.",
+          "ctaText": "Want quick release, warmth and a lighter back? Choose Hot Stone for an optimal session."
+        }
+      },
+      "massage-thuy-dien": {
+        "name": "Swedish Massage",
+        "description": "Classic spa-style strokes — gliding, kneading and working the muscles for balance between relaxation and recovery.",
+        "bullets": ["Relief from full-body muscle fatigue", "Mild improvement in circulation", "Ideal for first-time massage"],
+        "tagIntensity": "Light–Medium",
+        "tagGoal": "Recovery",
+        "detail": {
+          "overview": "Swedish massage is the classic spa style: long strokes, kneading and working muscle groups for a balance of relaxation and recovery. Very suitable for first-time massage.",
+          "benefits": ["Relief from full-body muscle fatigue and comfortable release", "Mild improvement in circulation and less sluggishness", "Support muscle recovery after work or travel"],
+          "suitableFor": ["First-time massage clients who want a \"just right\" feel", "People with overall fatigue who don’t need strong pressure", "Anyone wanting relaxation plus light recovery"],
+          "procedure": "Warm-up and muscle prep → long strokes along muscles → work shoulders, neck and back → relaxing finish.",
+          "notes": "If you have specific sore areas (neck, shoulders, back, thighs), note them so the therapist can focus more there.",
+          "ctaText": "Want a \"classic spa, comfortable, suits everyone\" session? Choose Swedish Massage."
+        }
+      }
     }
   },
   "footer": {

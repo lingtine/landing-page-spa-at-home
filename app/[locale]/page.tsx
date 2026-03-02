@@ -2,6 +2,7 @@ import { getTranslations, getLocaleFromPath, locales, type Locale } from '@/lib/
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import PremiumIntro from '@/components/PremiumIntro';
+import FeaturedServices from '@/components/FeaturedServices';
 import Services from '@/components/Services';
 import Benefits from '@/components/Benefits';
 import Steps from '@/components/Steps';
@@ -75,6 +76,7 @@ export default async function HomePage({
       <main className="flex-grow">
         <Hero translations={translations} locale={locale} />
 
+        <FeaturedServices locale={locale} translations={translations} />
         <Services translations={translations} locale={locale} />
         <Benefits translations={translations} />
         <Steps translations={translations} />

@@ -20,6 +20,16 @@
   },
   "services": {
     "title": "Bảng giá",
+    "pricingSubtitle": "Giá áp dụng cho dịch vụ massage",
+    "duration": "Thời lượng",
+    "randomKTV": "KTV ngẫu nhiên",
+    "chooseKTV": "Chọn KTV",
+    "before2330": "Trước 23:30",
+    "after2330": "Sau 23:30",
+    "minutesUnit": "phút",
+    "noteLateBooking": "Giá sau 23:30 áp dụng cho các ca đặt lịch muộn.",
+    "addonCaoGioGiacHoi": "Phụ phí Cao gió / Giác hơi",
+    "ctaBookZalo": "Đặt lịch qua Zalo",
     "body": {
       "name": "Body Massage",
       "description": "Giảm đau nhức, tăng tuần hoàn máu toàn thân",
@@ -149,6 +159,84 @@
     "q5": {
       "question": "Chính sách bảo mật như thế nào?",
       "answer": "Chúng tôi cam kết bảo mật thông tin khách hàng tuyệt đối và không chia sẻ với bên thứ ba."
+    }
+  },
+  "featuredServices": {
+    "title": "Dịch vụ nổi bật",
+    "subtitle": "Chọn liệu trình phù hợp mục tiêu: thư giãn – giảm đau mỏi – phục hồi năng lượng.",
+    "breadcrumbHome": "Trang chủ",
+    "breadcrumbServices": "Dịch vụ",
+    "sectionOverview": "Tổng quan",
+    "sectionBenefits": "Lợi ích nổi bật",
+    "sectionSuitableFor": "Phù hợp với",
+    "sectionProcedure": "Quy trình tại nhà (tóm tắt)",
+    "sectionNotes": "Lưu ý nhanh",
+    "ctaBook": "Đặt lịch",
+    "backToServices": "Quay lại dịch vụ",
+    "tagIntensity": "Cường độ",
+    "tagGoal": "Mục tiêu",
+    "viewDetail": "Xem chi tiết",
+    "services": {
+      "massage-thai": {
+        "name": "Massage Thái",
+        "description": "Kéo giãn – bấm huyệt – giải phóng căng cứng toàn thân.",
+        "bullets": ["Giảm đau mỏi cổ vai gáy, lưng, hông", "Tăng linh hoạt cơ – khớp", "Hợp người ngồi nhiều, vận động ít"],
+        "tagIntensity": "Mạnh",
+        "tagGoal": "Giãn cơ",
+        "detail": {
+          "overview": "Massage Thái kết hợp kéo giãn – bấm huyệt – giải phóng căng cơ theo nhịp trị liệu. Phù hợp khi bạn bị cứng cơ do ngồi lâu, vận động ít hoặc cảm giác \"đơ người\" sau ngày dài.",
+          "benefits": ["Giảm căng cứng cổ vai gáy, lưng, hông", "Tăng linh hoạt cơ – khớp, cải thiện tư thế", "Cảm giác \"nhẹ người\" và tỉnh táo sau buổi trị liệu"],
+          "suitableFor": ["Người làm văn phòng, ngồi nhiều, ít vận động", "Người hay đau mỏi lưng/khớp, cần \"giãn cơ sâu\"", "Người thích cường độ mạnh – đã (có thể điều chỉnh)"],
+          "procedure": "Khởi động nhẹ → bấm huyệt theo vùng → kéo giãn tay/chân/lưng → thư giãn kết thúc & dặn dò.",
+          "notes": "Không khuyến nghị nếu đang chấn thương cấp, bong gân nặng, hoặc đau nhức bất thường chưa rõ nguyên nhân.",
+          "ctaText": "Muốn \"giãn cơ sâu\" đúng bài? Chọn Massage Thái và ghi chú vùng đau mỏi để KTV điều chỉnh lực."
+        }
+      },
+      "massage-aroma": {
+        "name": "Massage Aroma",
+        "description": "Thư giãn sâu với tinh dầu, nhẹ nhàng đưa cơ thể về trạng thái \"calm\".",
+        "bullets": ["Giảm stress, dễ ngủ hơn", "Thả lỏng cơ nhẹ nhàng", "Hương thơm giúp ổn định tinh thần"],
+        "tagIntensity": "Nhẹ–Vừa",
+        "tagGoal": "Thư giãn",
+        "detail": {
+          "overview": "Massage Aroma là liệu trình thư giãn sâu với tinh dầu, thao tác nhẹ–vừa, tập trung đưa cơ thể về trạng thái \"calm\", dễ ngủ và giảm stress.",
+          "benefits": ["Thả lỏng hệ thần kinh, giảm căng thẳng", "Giúp ngủ ngon hơn, giảm mệt mỏi tinh thần", "Làm mềm cơ nhẹ nhàng, dễ chịu"],
+          "suitableFor": ["Người stress, khó ngủ, căng đầu, làm việc nhiều", "Người muốn massage nhẹ nhàng, không thích lực mạnh", "Khách cần \"nạp lại năng lượng\" sau ngày dài"],
+          "procedure": "Chọn mùi tinh dầu → thao tác thư giãn theo nhịp thở → tập trung cổ–vai–lưng → kết thúc bằng ấn huyệt nhẹ & hướng dẫn uống nước.",
+          "notes": "Nếu bạn dị ứng mùi/da nhạy cảm, hãy báo trước để đổi loại tinh dầu hoặc dùng dầu trung tính.",
+          "ctaText": "Cần thư giãn và dễ ngủ hơn tối nay? Chọn Aroma và chọn mùi bạn thích (nhẹ/ấm/dễ chịu)."
+        }
+      },
+      "massage-da-nong": {
+        "name": "Massage Đá Nóng",
+        "description": "Nhiệt đá giúp thả lỏng cơ nhanh, giảm căng cứng và lạnh cơ.",
+        "bullets": ["Làm ấm cơ, giảm co cứng", "Hỗ trợ tuần hoàn, thư giãn sâu", "Hợp người mỏi lưng, vai gáy lâu ngày"],
+        "tagIntensity": "Vừa",
+        "tagGoal": "Giảm căng cơ",
+        "detail": {
+          "overview": "Massage đá nóng sử dụng nhiệt ấm từ đá để làm mềm cơ nhanh, hỗ trợ tuần hoàn và giảm căng cứng sâu. Cảm giác ấm áp rất \"đã\" với người hay lạnh cơ hoặc mỏi lưng lâu ngày.",
+          "benefits": ["Làm ấm cơ, giảm co cứng và đau mỏi", "Thư giãn sâu, cơ thể \"thả\" nhanh", "Hỗ trợ tuần hoàn, giảm cảm giác nặng người"],
+          "suitableFor": ["Người đau mỏi vai gáy/lưng kéo dài", "Người thường xuyên lạnh tay chân, dễ co cơ", "Người muốn thư giãn sâu nhưng vẫn dễ chịu (lực vừa)"],
+          "procedure": "Làm nóng vùng cơ → đặt đá theo điểm căng → kết hợp day/miết → kết thúc thư giãn & dặn dò nghỉ ngơi.",
+          "notes": "Không dùng khi sốt, viêm da vùng trị liệu, hoặc bạn quá nhạy cảm với nhiệt. KTV luôn điều chỉnh nhiệt theo mức bạn thấy dễ chịu.",
+          "ctaText": "Muốn \"tan cơ\" nhanh, ấm người và nhẹ lưng? Chọn Đá Nóng cho buổi trị liệu tối ưu."
+        }
+      },
+      "massage-thuy-dien": {
+        "name": "Massage Thụy Điển",
+        "description": "Kỹ thuật vuốt – miết – day cơ chuẩn spa, cân bằng giữa thư giãn và phục hồi.",
+        "bullets": ["Giảm mỏi cơ toàn thân", "Tăng tuần hoàn nhẹ", "Hợp người mới massage lần đầu"],
+        "tagIntensity": "Nhẹ–Vừa",
+        "tagGoal": "Phục hồi",
+        "detail": {
+          "overview": "Massage Thụy Điển là phong cách chuẩn spa cổ điển: vuốt dài – miết – day theo nhóm cơ, cân bằng giữa thư giãn và phục hồi. Rất phù hợp cho người mới massage lần đầu.",
+          "benefits": ["Giảm mỏi cơ toàn thân, thả lỏng dễ chịu", "Cải thiện tuần hoàn nhẹ, giảm cảm giác uể oải", "Hỗ trợ phục hồi cơ sau làm việc/di chuyển"],
+          "suitableFor": ["Người mới trải nghiệm massage, muốn cảm giác \"vừa đủ\"", "Người mỏi toàn thân nhưng không cần lực mạnh", "Khách muốn liệu trình thư giãn + phục hồi nhẹ"],
+          "procedure": "Khởi động & làm nóng cơ → vuốt dài theo cơ → day vùng vai gáy/lưng → thư giãn kết thúc.",
+          "notes": "Nếu bạn có vùng đau mỏi cụ thể (cổ vai gáy/lưng/đùi), hãy ghi chú để KTV tập trung nhiều hơn.",
+          "ctaText": "Muốn một liệu trình \"chuẩn spa, dễ chịu, ai cũng hợp\"? Chọn Massage Thụy Điển."
+        }
+      }
     }
   },
   "footer": {
