@@ -45,25 +45,22 @@ export default function FeaturedServices({ locale, translations }: FeaturedServi
       <div className="container mx-auto max-w-6xl" ref={sectionRef}>
         <h2
           id="featured-services-title"
-          className={`text-3xl md:text-4xl font-bold text-center text-text mb-4 ${
-            isInView ? 'animate-fade-up' : 'opacity-0'
-          }`}
+          className={`text-3xl md:text-4xl font-bold text-center text-text mb-4 ${isInView ? 'animate-fade-up' : 'opacity-0'
+            }`}
         >
           {title}
         </h2>
         <p
-          className={`text-center text-text-muted mb-10 max-w-2xl mx-auto ${
-            isInView ? 'animate-fade-up' : 'opacity-0'
-          }`}
+          className={`text-center text-text-muted mb-10 max-w-2xl mx-auto ${isInView ? 'animate-fade-up' : 'opacity-0'
+            }`}
           style={{ animationDelay: '80ms' }}
         >
           {subtitle}
         </p>
 
         <div
-          className={`md:grid md:grid-cols-2 md:gap-6 md:auto-rows-fr overflow-x-auto snap-x snap-mandatory flex gap-4 pb-2 -mx-4 px-4 md:mx-0 md:px-0 md:pb-0 ${
-            isInView ? 'animate-fade-up' : 'opacity-0'
-          }`}
+          className={`grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 overflow-x-auto snap-x snap-mandatory md:overflow-visible md:snap-none -mx-4 px-4 md:mx-0 md:px-0 pb-2 md:pb-0 ${isInView ? 'animate-fade-up' : 'opacity-0'
+            }`}
           style={{ animationDelay: '160ms' }}
         >
           {FEATURED_SERVICE_IDS.map((id, index) => {
@@ -73,7 +70,7 @@ export default function FeaturedServices({ locale, translations }: FeaturedServi
             return (
               <div
                 key={id}
-                className="flex-shrink-0 w-[85vw] max-w-sm snap-center md:w-auto md:max-w-none md:snap-align-none"
+                className="w-full"
               >
                 <FeaturedServiceCard
                   id={id}
