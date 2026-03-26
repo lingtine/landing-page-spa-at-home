@@ -9,7 +9,11 @@ const playfair = Playfair_Display({
   display: 'swap',
 });
 
-export const metadata: Metadata = {};
+export const metadata: Metadata = {
+  verification: {
+    google: '6b0034f10df49866',
+  },
+};
 
 export default function RootLayout({
   children,
