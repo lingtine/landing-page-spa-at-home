@@ -11,7 +11,7 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   verification: {
-    google: '6b0034f10df49866',
+    google: '8fAM_kCnsIur3Zokp9i2Gw9kvFvukJNBHNHIokdff0g',
   },
 };
 
