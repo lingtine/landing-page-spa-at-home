@@ -10,6 +10,7 @@ import Reviews from '@/components/Reviews';
 import FAQ from '@/components/FAQ';
 import Footer from '@/components/Footer';
 import config from '@/global-config';
+import { SITE_URL, OG_LOCALES, generateBusinessJsonLd, generateFAQJsonLd } from '@/lib/seo';
 import type { Metadata } from 'next';
 
 // Generate static params for all locales
@@ -25,7 +26,6 @@ export async function generateMetadata({
   params: { locale: string };
 }): Promise<Metadata> {
   const locale = params.locale as Locale;
-  const translations = await getTranslations(locale);
 
   const titles: Record<Locale, string> = {
     vi: `${config.nameWebsite} - Massage Tại Nhà TP.HCM`,
@@ -42,14 +42,13 @@ export async function generateMetadata({
     en: 'at-home massage, home massage Ho Chi Minh City, body massage, shiatsu, swedish massage, neck massage, book massage at home',
     ko: '방문 마사지, 호치민 방문 마사지, 바디 마사지, 시아츠, 스웨디시 마사지, 어깨 목 마사지, 집에서 마사지',
   };
-  const ogLocales: Record<Locale, string> = {
-    vi: 'vi_VN',
-    en: 'en_US',
-    ko: 'ko_KR',
-  };
+
   const title = titles[locale];
   const description = descriptions[locale];
+  const pageUrl = `${SITE_URL}/${locale}/`;
+
   return {
+    metadataBase: new URL(SITE_URL),
     title,
     description,
     keywords: keywords[locale],
@@ -57,7 +56,14 @@ export async function generateMetadata({
       title,
       description,
       type: 'website',
-      locale: ogLocales[locale],
+      locale: OG_LOCALES[locale],
+      url: pageUrl,
+      images: [
+        {
+          url: '/images/banner-hero.png',
+          alt: title,
+        },
+      ],
     },
   };
 }
@@ -69,6 +75,9 @@ export default async function HomePage({
 }) {
   const locale = params.locale as Locale;
   const translations = await getTranslations(locale);
+
+  const businessJsonLd = generateBusinessJsonLd(locale, translations);
+  const faqJsonLd = generateFAQJsonLd(translations);
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -87,39 +96,15 @@ export default async function HomePage({
       </main>
       <Footer translations={translations} locale={locale} />
 
-      {/* Schema.org JSON-LD */}
+      {/* Schema.org JSON-LD — Business */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'HealthAndBeautyBusiness',
-            name: config.nameWebsite,
-            description: translations.hero.subheadline,
-            telephone: config.phoneNumber.startsWith('0') ? `+84${config.phoneNumber.slice(1)}` : config.phoneNumber,
-            email: config.email,
-            address: {
-              '@type': 'PostalAddress',
-              streetAddress: config.address,
-              addressLocality: 'Thành phố Hồ Chí Minh',
-              addressCountry: 'VN',
-            },
-            url: undefined,
-            priceRange: '$$',
-            areaServed: { '@type': 'City', name: 'Ho Chi Minh City' },
-            serviceType: 'At-Home Massage Service',
-            hasOfferCatalog: {
-              '@type': 'OfferCatalog',
-              name: 'Dịch vụ Massage Tại Nhà',
-              itemListElement: [
-                { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Body Massage' } },
-                { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Massage Vai Gáy' } },
-                { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Shiatsu Nhật Bản' } },
-                { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Massage Thụy Điển' } },
-              ],
-            },
-          }),
-        }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(businessJsonLd) }}
+      />
+      {/* Schema.org JSON-LD — FAQ */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
     </div>
   );

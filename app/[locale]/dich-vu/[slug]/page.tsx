@@ -1,4 +1,5 @@
 import { notFound } from 'next/navigation';
+import Image from 'next/image';
 import Link from 'next/link';
 import { getTranslations, locales, type Locale } from '@/lib/i18n';
 import { FEATURED_SERVICE_IDS, getFeaturedServiceImage, isFeaturedServiceSlug } from '@/lib/featured_services';
@@ -6,6 +7,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import config from '@/global-config';
 import { ZALO_LINK } from '@/lib/zalo';
+import { SITE_URL, OG_LOCALES, DEFAULT_LOCALE, generateServiceJsonLd, generateBreadcrumbJsonLd } from '@/lib/seo';
 import type { Metadata } from 'next';
 
 export async function generateStaticParams() {
@@ -18,11 +20,24 @@ export async function generateStaticParams() {
   return params;
 }
 
-/** Rút gọn text cho meta description (khoảng 155 ký tự) */
+/** Truncate text for meta description (max 155 chars) */
 function truncateForMeta(text: string, maxLen = 155): string {
   if (text.length <= maxLen) return text;
   return text.slice(0, maxLen - 3).trim() + '...';
 }
+
+/** Truncate title to max 60 chars */
+function truncateTitle(text: string, maxLen = 60): string {
+  if (text.length <= maxLen) return text;
+  return text.slice(0, maxLen - 3).trim() + '...';
+}
+
+/** Service-page keywords per locale */
+const SERVICE_KEYWORDS: Record<Locale, (serviceName: string) => string> = {
+  vi: (name) => `${name}, massage tại nhà, massage tại nhà TPHCM, dịch vụ massage, đặt lịch massage, ${config.nameWebsite}`,
+  en: (name) => `${name}, at-home massage, massage Ho Chi Minh City, massage service, book massage, ${config.nameWebsite}`,
+  ko: (name) => `${name}, 방문 마사지, 호치민 마사지, 마사지 서비스, 마사지 예약, ${config.nameWebsite}`,
+};
 
 export async function generateMetadata({
   params,
@@ -38,23 +53,40 @@ export async function generateMetadata({
   if (!service?.name) return { title: config.nameWebsite };
 
   const overview = (service as { detail?: { overview?: string } })?.detail?.overview ?? service.description ?? '';
-  const title = `${service.name} | ${locale === 'vi' ? 'Dịch vụ massage' : locale === 'en' ? 'Massage services' : '마사지 서비스'} | ${config.nameWebsite}`;
+  const rawTitle = `${service.name} | ${config.nameWebsite}`;
+  const title = truncateTitle(rawTitle);
   const description = truncateForMeta(overview);
+  const pageUrl = `${SITE_URL}/${locale}/dich-vu/${slug}/`;
+  const image = getFeaturedServiceImage(slug);
 
-  const ogLocales: Record<Locale, string> = {
-    vi: 'vi_VN',
-    en: 'en_US',
-    ko: 'ko_KR',
-  };
+  // Build hreflang alternates for the same slug across all locales
+  const languages: Record<string, string> = {};
+  for (const loc of locales) {
+    languages[loc] = `/${loc}/dich-vu/${slug}/`;
+  }
+  languages['x-default'] = `/${DEFAULT_LOCALE}/dich-vu/${slug}/`;
 
   return {
+    metadataBase: new URL(SITE_URL),
     title,
     description,
+    keywords: SERVICE_KEYWORDS[locale](service.name),
+    alternates: {
+      canonical: `/${locale}/dich-vu/${slug}/`,
+      languages,
+    },
     openGraph: {
       title,
       description,
       type: 'article',
-      locale: ogLocales[locale],
+      locale: OG_LOCALES[locale],
+      url: pageUrl,
+      images: [
+        {
+          url: image,
+          alt: service.name,
+        },
+      ],
     },
   };
 }
@@ -105,6 +137,17 @@ export default async function DichVuSlugPage({
   const image = getFeaturedServiceImage(slug);
   const benefits = d.benefits ?? [];
   const suitableFor = d.suitableFor ?? [];
+  const overview = d.overview ?? service.description ?? '';
+
+  // JSON-LD: Service
+  const serviceJsonLd = generateServiceJsonLd(locale, service.name, overview);
+
+  // JSON-LD: BreadcrumbList
+  const breadcrumbJsonLd = generateBreadcrumbJsonLd(locale, [
+    { name: labels.breadcrumbHome, url: `${SITE_URL}/${locale}/` },
+    { name: labels.breadcrumbServices, url: `${SITE_URL}/${locale}/#featured-services` },
+    { name: service.name, url: `${SITE_URL}/${locale}/dich-vu/${slug}/` },
+  ]);
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -134,9 +177,12 @@ export default async function DichVuSlugPage({
 
           <article>
             <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden bg-background mb-6">
-              <img
+              <Image
                 src={image}
                 alt={service.name}
+                width={800}
+                height={600}
+                sizes="(max-width: 768px) 100vw, 768px"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -232,6 +278,17 @@ export default async function DichVuSlugPage({
       </main>
 
       <Footer translations={translations} locale={locale} />
+
+      {/* Schema.org JSON-LD — Service */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
+      {/* Schema.org JSON-LD — BreadcrumbList */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
     </div>
   );
 }

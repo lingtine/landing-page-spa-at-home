@@ -15,7 +15,7 @@ export default function Hero({ translations, locale }: HeroProps) {
       {/* Background image */}
       <Image
         src="/images/banner-hero.png"
-        alt="Massage tại nhà TP.HCM"
+        alt={translations.hero.imageAlt}
         fill
         priority
         className="object-cover object-center"

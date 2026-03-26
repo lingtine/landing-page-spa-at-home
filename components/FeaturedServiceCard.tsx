@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { openZalo } from '@/lib/zalo';
 import { type Locale } from '@/lib/i18n';
@@ -42,14 +43,13 @@ export default function FeaturedServiceCard({
         href={href}
         className="relative w-full aspect-[4/3] overflow-hidden bg-background block"
       >
-        <img
+        <Image
           src={image}
           alt={name}
+          width={600}
+          height={450}
+          sizes="(max-width: 768px) 100vw, 50vw"
           className="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
-          onError={(e) => {
-            const target = e.target as HTMLImageElement;
-            target.style.display = 'none';
-          }}
         />
         <div className="absolute inset-0 bg-black/20 transition-opacity group-hover:bg-black/30" />
         <div className="absolute bottom-3 left-3 right-3 flex flex-wrap gap-2">
