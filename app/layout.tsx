@@ -10,6 +10,10 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
+  icons: {
+    icon: '/favicon.png',
+    apple: '/favicon.png',
+  },
   verification: {
     google: '8fAM_kCnsIur3Zokp9i2Gw9kvFvukJNBHNHIokdff0g',
   },
