@@ -12,14 +12,14 @@ export const FEATURED_SERVICE_IDS = [
 export type FeaturedServiceId = (typeof FEATURED_SERVICE_IDS)[number];
 
 const IMAGES: Record<FeaturedServiceId, string> = {
-  'massage-thai': '/images/massa/masa_thai.png',
-  'massage-aroma': '/images/massa/aromatherapy_massage.png',
-  'massage-da-nong': '/images/massa/hot_stone.jpg',
-  'massage-thuy-dien': '/images/massa/swedish.png',
+  'massage-thai': '/images/massa/masa_thai.webp',
+  'massage-aroma': '/images/massa/aromatherapy_massage.webp',
+  'massage-da-nong': '/images/massa/hot_stone.webp',
+  'massage-thuy-dien': '/images/massa/swedish.webp',
 };
 
 export function getFeaturedServiceImage(id: string): string {
-  return IMAGES[id as FeaturedServiceId] ?? '/images/logo.png';
+  return IMAGES[id as FeaturedServiceId] ?? '/images/logo.webp';
 }
 
 export function isFeaturedServiceSlug(slug: string): slug is FeaturedServiceId {

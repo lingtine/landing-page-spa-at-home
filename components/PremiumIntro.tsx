@@ -65,7 +65,7 @@ export default function PremiumIntro({ translations, locale }: PremiumIntroProps
             style={{ clipPath: 'url(#binocular-premium)' }}
           >
             <Image
-              src="/images/about_us.png"
+              src="/images/about_us.webp"
               alt={imageAlt}
               fill
               className="object-cover object-center"

@@ -29,7 +29,7 @@ export default function Benefits({ translations }: BenefitsProps) {
             }`}
           >
             <Image
-              src="/images/why_us.png"
+              src="/images/why_us.webp"
               alt={imageAlt}
               fill
               className="object-cover"

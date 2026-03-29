@@ -14,7 +14,7 @@ export default function Hero({ translations, locale }: HeroProps) {
     <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
       {/* Background image */}
       <Image
-        src="/images/banner-hero.png"
+        src="/images/banner-hero.webp"
         alt={translations.hero.imageAlt}
         fill
         priority
