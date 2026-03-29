@@ -1,17 +1,20 @@
 import { getTranslations, getLocaleFromPath, locales, type Locale } from '@/lib/i18n';
+import dynamic from 'next/dynamic';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
-import PremiumIntro from '@/components/PremiumIntro';
 import FeaturedServices from '@/components/FeaturedServices';
-import Services from '@/components/Services';
-import Benefits from '@/components/Benefits';
-import Steps from '@/components/Steps';
-import Reviews from '@/components/Reviews';
-import FAQ from '@/components/FAQ';
-import Footer from '@/components/Footer';
 import config from '@/global-config';
 import { SITE_URL, OG_LOCALES, generateBusinessJsonLd, generateFAQJsonLd } from '@/lib/seo';
 import type { Metadata } from 'next';
+
+// Lazy load below-the-fold components
+const Services = dynamic(() => import('@/components/Services'));
+const Benefits = dynamic(() => import('@/components/Benefits'));
+const Steps = dynamic(() => import('@/components/Steps'));
+const PremiumIntro = dynamic(() => import('@/components/PremiumIntro'));
+const Reviews = dynamic(() => import('@/components/Reviews'));
+const FAQ = dynamic(() => import('@/components/FAQ'));
+const Footer = dynamic(() => import('@/components/Footer'));
 
 // Generate static params for all locales
 export async function generateStaticParams() {
