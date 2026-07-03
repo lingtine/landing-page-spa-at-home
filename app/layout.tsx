@@ -40,6 +40,18 @@ export default function RootLayout({
       <body className={`${inter.className} ${playfair.variable}`}>
         {children}
         <Script
+          src="https://cdn.cookiehub.eu/c2/7af1dd55.js"
+          strategy="afterInteractive"
+        />
+        <Script id="cookiehub-init" strategy="afterInteractive">
+          {`
+            document.addEventListener("DOMContentLoaded", function(event) {
+              var cpm = {};
+              window.cookiehub.load(cpm);
+            });
+          `}
+        </Script>
+        <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
           strategy="afterInteractive"
         />
