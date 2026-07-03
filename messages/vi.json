@@ -9,6 +9,7 @@
   "hero": {
     "headline": "Massage tại nhà TP.HCM — an toàn, kín đáo & chu đáo",
     "subheadline": "Body Massage, Shiatsu Nhật Bản, Massage Thụy Điển... KTV đến tận nơi đúng giờ. Đặt lịch chỉ với một tin nhắn Zalo.",
+    "definition": "Iku Massage là dịch vụ massage tại nhà chuyên nghiệp ở TP.HCM, phục vụ Body Massage, Shiatsu, Massage Thụy Điển, Thái, Aroma và Đá Nóng. KTV được xác minh đến tận nơi từ 8:00 – 23:30 mỗi ngày.",
     "ctaPrimary": "Đặt lịch qua Zalo",
     "ctaSecondary": "Gọi ngay",
     "imageAlt": "Dịch vụ massage tại nhà TP.HCM"
@@ -160,6 +161,26 @@
     "q5": {
       "question": "Chính sách bảo mật như thế nào?",
       "answer": "Chúng tôi cam kết bảo mật thông tin khách hàng tuyệt đối và không chia sẻ với bên thứ ba."
+    },
+    "q6": {
+      "question": "Massage tại nhà TP.HCM giá bao nhiêu?",
+      "answer": "Giá massage tại nhà của Iku Massage dao động từ khoảng 400.000₫ – 900.000₫ tuỳ thời lượng (60/90/120 phút) và khung giờ (trước hay sau 23:30). Bảng giá công khai trên trang, không phát sinh phí ẩn — mọi phụ phí (như cao gió, giác hơi) được báo trước khi bạn xác nhận đặt lịch."
+    },
+    "q7": {
+      "question": "Massage tại nhà có an toàn và kín đáo không?",
+      "answer": "Có. Iku Massage là dịch vụ trị liệu – thư giãn thuần chuyên nghiệp. KTV được tuyển chọn, xác minh danh tính, mặc đồng phục và mang đầy đủ dụng cụ sạch. Chúng tôi từ chối mọi yêu cầu không phù hợp và bảo mật tuyệt đối thông tin khách hàng."
+    },
+    "q8": {
+      "question": "Có thể chọn KTV nam hay nữ không?",
+      "answer": "Có. Khi đặt lịch qua Zalo, bạn được quyền chọn KTV nam hoặc nữ, hoặc chọn ‘KTV ngẫu nhiên’ để nhận báo giá tiết kiệm hơn. Nếu chọn KTV cụ thể, phụ phí ‘Chọn KTV’ sẽ được cộng vào theo bảng giá."
+    },
+    "q9": {
+      "question": "Nên chọn Massage Thái, Aroma, Đá Nóng hay Thụy Điển?",
+      "answer": "Tóm tắt nhanh: chọn Thái nếu cứng cơ, cần giãn sâu; chọn Aroma nếu stress, khó ngủ; chọn Đá Nóng nếu hay lạnh cơ, mỏi lưng lâu ngày; chọn Thụy Điển nếu bạn mới massage lần đầu hoặc muốn liệu trình cân bằng giữa thư giãn và phục hồi."
+    },
+    "q10": {
+      "question": "Iku Massage phục vụ những quận nào tại TP.HCM?",
+      "answer": "Chúng tôi phục vụ Gò Vấp, Quận 1, Quận 3, Bình Thạnh, Phú Nhuận, Tân Bình, Tân Phú, Quận 7, Quận 10, Quận 11 và Thành phố Thủ Đức. Các khu vực lân cận vui lòng nhắn Zalo để kiểm tra khả năng phục vụ và thời gian di chuyển."
     }
   },
   "featuredServices": {
@@ -245,6 +266,8 @@
     "tagline": "Massage tại nhà TP.HCM — an toàn, kín đáo, chuyên nghiệp. KTV đến tận nơi đúng giờ.",
     "titleServices": "Khám phá",
     "titleContact": "Liên hệ đặt lịch",
+    "titleAreaServed": "Khu vực phục vụ",
+    "areaServedNote": "Iku Massage phục vụ massage tại nhà trên toàn TP.HCM và các quận lân cận:",
     "company": "",
     "zalo": "Zalo",
     "hotline": "Hotline",

@@ -30,8 +30,10 @@ describe('Property 7: Business JSON-LD completeness', () => {
                 const translations = loadTranslations(locale);
                 const result = generateBusinessJsonLd(locale, translations);
 
-                // Verify @type
-                expect(result['@type']).toBe('HealthAndBeautyBusiness');
+                // Verify @type includes HealthAndBeautyBusiness (may also include LocalBusiness)
+                const type = result['@type'] as string | readonly string[];
+                const types = Array.isArray(type) ? type : [type];
+                expect(types).toContain('HealthAndBeautyBusiness');
 
                 // Verify all required fields are present and non-empty
                 expect(result.name).toBeTruthy();
@@ -126,15 +128,12 @@ describe('Property 8: Service JSON-LD completeness', () => {
                 expect(result.name).toBe(serviceName);
                 expect(result.description).toBe(serviceDescription);
 
-                // Verify provider exists and references HealthAndBeautyBusiness
+                // Provider is now referenced by @id pointing to the LocalBusiness node
                 expect(result.provider).toBeDefined();
-                expect(result.provider['@type']).toBe('HealthAndBeautyBusiness');
-                expect(result.provider.name).toBeTruthy();
-                expect(typeof result.provider.name).toBe('string');
-                expect(result.provider.name.length).toBeGreaterThan(0);
-                expect(result.provider.url).toBeTruthy();
-                expect(typeof result.provider.url).toBe('string');
-                expect(result.provider.url.length).toBeGreaterThan(0);
+                const provider = result.provider as { '@id': string };
+                expect(provider['@id']).toBeTruthy();
+                expect(typeof provider['@id']).toBe('string');
+                expect(provider['@id']).toMatch(/^https:\/\/massagetannha\.com\/#business$/);
             }),
             { numRuns: 100 },
         );

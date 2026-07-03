@@ -11,13 +11,10 @@ export default function FAQ({ translations }: FAQProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const { ref: sectionRef, isInView } = useInView<HTMLDivElement>();
 
-  const faqs = [
-    translations.faq.q1,
-    translations.faq.q2,
-    translations.faq.q3,
-    translations.faq.q4,
-    translations.faq.q5,
-  ];
+  const faqs = Object.keys(translations.faq)
+    .filter((k) => /^q\d+$/.test(k) && translations.faq[k]?.question)
+    .sort((a, b) => Number(a.slice(1)) - Number(b.slice(1)))
+    .map((k) => translations.faq[k]);
 
   return (
     <section id="faq" className="py-20 px-4 bg-background overflow-hidden">
@@ -68,10 +65,10 @@ export default function FAQ({ translations }: FAQProps) {
                 {/* Answer: smooth height via max-height transition */}
                 <div
                   className={`overflow-hidden transition-[max-height,opacity] duration-400 ease-in-out ${
-                    isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                    isOpen ? 'max-h-[32rem] opacity-100' : 'max-h-0 opacity-0'
                   }`}
                 >
-                  <p className="px-6 py-4 text-text-muted border-t border-border leading-relaxed">
+                  <p className="faq-answer px-6 py-4 text-text-muted border-t border-border leading-relaxed">
                     {faq.answer}
                   </p>
                 </div>

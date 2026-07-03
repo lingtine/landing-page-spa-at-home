@@ -12,8 +12,13 @@ interface FooterProps {
 export default function Footer({ translations, locale }: FooterProps) {
   const t = translations.footer;
 
-  /** Replace {name} placeholder with website name */
   const titleAbout = (t.titleAbout || '').replace(/\{name\}/g, config.nameWebsite);
+
+  const areaLabelFor = (area: (typeof config.areaServed)[number]) => {
+    if (locale === 'en') return area.nameEn;
+    if (locale === 'ko') return area.nameKo;
+    return area.name;
+  };
 
   /** Smooth-scroll helper for anchor links */
   const scrollTo = (id: string) => (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -110,6 +115,26 @@ export default function Footer({ translations, locale }: FooterProps) {
             </div>
           </div>
         </div>
+
+        {/* Area served — local SEO signal */}
+        {t.titleAreaServed && (
+          <div className="mb-10">
+            <h3 className="text-xl font-semibold mb-3">{t.titleAreaServed}</h3>
+            {t.areaServedNote && (
+              <p className="text-white/70 text-sm leading-relaxed mb-3">{t.areaServedNote}</p>
+            )}
+            <ul className="flex flex-wrap gap-2 text-white/75 text-sm">
+              {config.areaServed.map((area) => (
+                <li
+                  key={area.name}
+                  className="px-3 py-1 rounded-full bg-white/5 border border-white/10"
+                >
+                  {areaLabelFor(area)}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
 
         {/* Divider + copyright */}
         <div className="border-t border-white/15 pt-6 text-center text-white/50 text-sm space-y-1">

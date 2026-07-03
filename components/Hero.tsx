@@ -37,11 +37,20 @@ export default function Hero({ translations, locale }: HeroProps) {
 
         {/* Subheadline */}
         <p
-          className="text-lg md:text-xl text-white/85 mb-10 max-w-2xl mx-auto text-balance animate-fade-up drop-shadow"
+          className="hero-subheadline text-lg md:text-xl text-white/85 mb-6 max-w-2xl mx-auto text-balance animate-fade-up drop-shadow"
           style={{ animationDelay: '150ms' }}
         >
           {translations.hero.subheadline}
         </p>
+
+        {translations.hero.definition && (
+          <p
+            className="text-sm md:text-base text-white/70 mb-10 max-w-3xl mx-auto text-balance animate-fade-up drop-shadow"
+            style={{ animationDelay: '220ms' }}
+          >
+            {translations.hero.definition}
+          </p>
+        )}
 
         {/* CTAs */}
         <div

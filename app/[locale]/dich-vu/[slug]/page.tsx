@@ -71,6 +71,19 @@ export async function generateMetadata({
     title,
     description,
     keywords: SERVICE_KEYWORDS[locale](service.name),
+    category: 'Health & Beauty',
+    publisher: config.nameWebsite,
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+        'max-video-preview': -1,
+      },
+    },
     alternates: {
       canonical: `/${locale}/dich-vu/${slug}/`,
       languages,
@@ -80,13 +93,23 @@ export async function generateMetadata({
       description,
       type: 'article',
       locale: OG_LOCALES[locale],
+      alternateLocale: Object.values(OG_LOCALES).filter((l) => l !== OG_LOCALES[locale]),
       url: pageUrl,
+      siteName: config.nameWebsite,
       images: [
         {
           url: image,
+          width: 1200,
+          height: 900,
           alt: service.name,
         },
       ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [image],
     },
   };
 }

@@ -9,6 +9,7 @@
   "hero": {
     "headline": "At-Home Massage in Ho Chi Minh City — Safe, Discreet & Professional",
     "subheadline": "Body Massage, Japanese Shiatsu, Swedish Massage... Therapist comes to you, on time. Book now with just a Zalo message.",
+    "definition": "Iku Massage is a professional at-home massage service in Ho Chi Minh City, offering Body, Shiatsu, Swedish, Thai, Aromatherapy and Hot Stone massage. Verified therapists come to your location daily from 8:00 AM to 11:30 PM.",
     "ctaPrimary": "Book via Zalo",
     "ctaSecondary": "Call Now",
     "imageAlt": "At-home massage service in Ho Chi Minh City"
@@ -160,6 +161,26 @@
     "q5": {
       "question": "What is your privacy policy?",
       "answer": "We are fully committed to protecting customer information and will never share it with third parties."
+    },
+    "q6": {
+      "question": "How much does at-home massage in Ho Chi Minh City cost?",
+      "answer": "At-home massage rates at Iku Massage range from about 400,000₫ to 900,000₫ depending on duration (60/90/120 minutes) and time slot (before or after 11:30 PM). Pricing is public on this page, with no hidden fees — any add-ons (cupping, scraping) are quoted before you confirm."
+    },
+    "q7": {
+      "question": "Is at-home massage safe and discreet?",
+      "answer": "Yes. Iku Massage provides strictly professional therapeutic and relaxation services. Every therapist is screened and identity-verified, wears uniform, and brings clean equipment. We refuse all inappropriate requests and keep customer information fully confidential."
+    },
+    "q8": {
+      "question": "Can I choose a male or female therapist?",
+      "answer": "Yes. When booking via Zalo you can request a male or female therapist, or select ‘random therapist’ for a lower price. Choosing a specific therapist adds a small ‘Choose therapist’ surcharge shown in the pricing table."
+    },
+    "q9": {
+      "question": "Which massage should I pick — Thai, Aroma, Hot Stone or Swedish?",
+      "answer": "Quick guide: pick Thai for stiff muscles that need deep stretching; Aroma for stress and poor sleep; Hot Stone for chronic back or shoulder tension and cold muscles; Swedish for a balanced, first-time-friendly session focused on relaxation and light recovery."
+    },
+    "q10": {
+      "question": "Which districts in Ho Chi Minh City do you serve?",
+      "answer": "We serve Go Vap, District 1, District 3, Binh Thanh, Phu Nhuan, Tan Binh, Tan Phu, District 7, District 10, District 11 and Thu Duc City. For neighbouring areas, message us on Zalo to check availability and travel time."
     }
   },
   "featuredServices": {
@@ -245,6 +266,8 @@
     "tagline": "At-home massage in Ho Chi Minh City — safe, discreet and professional. Therapist comes to you on time.",
     "titleServices": "Explore",
     "titleContact": "Book Now",
+    "titleAreaServed": "Areas we serve",
+    "areaServedNote": "Iku Massage delivers at-home massage across Ho Chi Minh City and nearby districts:",
     "company": "",
     "zalo": "Zalo",
     "hotline": "Hotline",

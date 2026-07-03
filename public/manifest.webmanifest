@@ -1,0 +1,16 @@
+{
+  "name": "Iku Massage - Massage Tại Nhà TP.HCM",
+  "short_name": "Iku Massage",
+  "description": "Dịch vụ massage tại nhà TP.HCM. Body, Thái, Aroma, Đá Nóng, Shiatsu, Thụy Điển. KTV xác minh đến tận nơi.",
+  "start_url": "/vi/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#8b5a3c",
+  "orientation": "portrait",
+  "lang": "vi",
+  "icons": [
+    { "src": "/favicon.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/favicon.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+  ]
+}
